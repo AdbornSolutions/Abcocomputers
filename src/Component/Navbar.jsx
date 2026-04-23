@@ -16,7 +16,15 @@ const Navbar = () => {
     <div className="flex items-center gap-8 px-8 py-4 
       bg-white/10 backdrop-blur-md border border-white/20 
       rounded-full shadow-md 
-      text-white text-[18px] font-heading leading-none">
+      text-white text-center"
+      style={{
+        fontFamily: 'Merriweather',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        fontSize: '20px',
+        lineHeight: '100%',
+        letterSpacing: '0%'
+      }}>
 
       <a href="#">Home</a>
       <a href="#">About us</a>
@@ -30,9 +38,16 @@ const Navbar = () => {
     <div>
       <button className="px-6 py-4 rounded-full 
   bg-white/10 backdrop-blur-md border border-white/20 
-  text-white 
-  font-heading text-[18px] leading-none font-normal 
-  hover:bg-white/20 transition">
+  text-white text-center
+  hover:bg-white/20 transition"
+  style={{
+    fontFamily: 'Merriweather',
+    fontWeight: 400,
+    fontStyle: 'normal',
+    fontSize: '20px',
+    lineHeight: '100%',
+    letterSpacing: '0%'
+  }}>
   Book a call
 </button>
     </div>
