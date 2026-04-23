@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Footer from './Component/Footer'
 
 const App = () => {
   return (
-    <>
-    <Footer/>
-    </>
+    <div className="absolute inset-0 w-auto h-auto bg-blue-500 flex items-center justify-center">
+      <h1>App</h1>
+    </div>
   )
 }
 
