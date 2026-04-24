@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Footer from './Component/Footer'
+import Home from './Page/Home'
+import Navbar from './Component/Navbar'
 
 const App = () => {
   return (
     <>
-    <Footer/>
+    <Navbar/>
+    <Home/>
     </>
   )
 }
