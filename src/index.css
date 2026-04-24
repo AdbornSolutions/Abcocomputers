@@ -4,17 +4,17 @@
 
 /* Default body font */
 body {
- @apply font-body text-[18px] leading-relaxed;
+  @apply text-[18px] leading-relaxed;
   font-family: 'Poppins', sans-serif;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  @apply font-heading text-[25px] leading-none;
-font-family: 'Merriweather', serif;
+  @apply text-[25px] leading-none;
+  font-family: 'Merriweather', serif;
 }
 
 /* Paragraphs */
 p {
-  @apply font-body;
+  font-family: 'Poppins', sans-serif;
 }
