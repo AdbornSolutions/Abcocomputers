@@ -46,17 +46,28 @@ const HomeSection = ({
         <div className="mt-6 flex gap-4 flex-wrap justify-center">
 
           {primaryBtn && (
-            <button className="px-6 py-3 rounded-full 
-              bg-gradient-to-r from-purple-500 to-pink-500 
-              text-white font-body text-sm">
+            <button className="px-6 py-3 w-44 text-center rounded-full 
+              bg-white/10 backdrop-blur-lg 
+              border border-white/30 
+              text-white font-body text-sm 
+              shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
+              hover:bg-white/20 hover:scale-105 
+              transition duration-300">
               {primaryBtn}
             </button>
           )}
 
           {secondaryBtn && (
-            <button className="px-6 py-3 rounded-full 
-              border border-white/30 text-white font-body text-sm 
-              hover:bg-white/10 transition">
+            <button
+              className="px-6 py-3 w-44 text-center rounded-full 
+              bg-white text-black font-body text-sm 
+              border border-white/30 
+              hover:bg-white/10 hover:text-white 
+              hover:backdrop-blur-md 
+              hover:border-white/40 
+              hover:scale-105 
+              transition duration-300"
+            >
               {secondaryBtn}
             </button>
           )}

@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <HomeSection
         heading="Unlock Your IT Career in the USA with ABCO Computers"
-        description="Tap into our network of employers..."
+        description="Tap into our network of employers and land positions that match your skills and career goals."
         primaryBtn="Get Started"
         secondaryBtn="Book a call"
         bgImage={bg}
