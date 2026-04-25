@@ -1,27 +1,35 @@
 import React from "react";
 
-
-const Services = ({ title = "Services", heading, servicesData }) => {
+const Services = ({
+  title = "Services",
+  heading,
+  servicesData = [],
+  columns = "lg:grid-cols-3", // 👈 flexible layout
+}) => {
   return (
-    <div className="w-full bg-[#020617] py-16 px-4 flex justify-center">
+    <section className="w-full bg-[#020617] py-16 px-4 flex justify-center">
       
       <div className="w-full max-w-6xl">
 
         {/* HEADER */}
         <div className="text-center mb-12">
           
-          <span className="px-4 py-1 rounded-full border border-white/20 text-gray-300 text-sm">
-            {title}
-          </span>
+          {title && (
+            <span className="px-4 py-1 rounded-full border border-white/20 text-gray-300 text-sm">
+              {title}
+            </span>
+          )}
 
-          <h2 className="mt-4 font-heading text-[32px] md:text-[36px] text-white">
-            {heading}
-          </h2>
+          {heading && (
+            <h2 className="mt-4 font-heading text-[32px] md:text-[36px] text-white">
+              {heading}
+            </h2>
+          )}
 
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 ${columns} gap-6`}>
           
           {servicesData.map((item, index) => (
             <div
@@ -34,24 +42,40 @@ const Services = ({ title = "Services", heading, servicesData }) => {
               transition duration-300"
             >
               
-              {/* ICON IMAGE */}
-              <div className="mb-4">
-                <img 
-                  src={item.icon} 
-                  alt={item.title} 
-                  className="w-10 h-10 object-contain opacity-80"
-                />
-              </div>
+              {/* ICON */}
+              {item.icon && (
+                <div className="mb-4">
+                  <img 
+                    src={item.icon} 
+                    alt={item.title} 
+                    className="w-10 h-10 object-contain opacity-80"
+                  />
+                </div>
+              )}
 
               {/* TITLE */}
-              <h3 className="font-heading text-[20px] mb-2">
-                {item.title}
-              </h3>
+              {item.title && (
+                <h3 className="font-heading text-[20px] mb-2">
+                  {item.title}
+                </h3>
+              )}
 
               {/* DESCRIPTION */}
-              <p className="text-gray-400 text-[14px] leading-[1.6] font-body">
-                {item.desc}
-              </p>
+              {item.desc && (
+                <p className="text-gray-400 text-[14px] leading-[1.6] font-body">
+                  {item.desc}
+                </p>
+              )}
+
+              {/* OPTIONAL BUTTON */}
+              {item.link && (
+                <a
+                  href={item.link}
+                  className="inline-block mt-4 text-sm text-blue-400 hover:underline"
+                >
+                  Learn More →
+                </a>
+              )}
 
             </div>
           ))}
@@ -59,7 +83,7 @@ const Services = ({ title = "Services", heading, servicesData }) => {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
 

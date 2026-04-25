@@ -4,11 +4,9 @@ import HomeSection from '../Component/Common/HeroSection';
 import Footer from '../Component/Footer';
 import CareerinUsa from '../Component/Home-page/CareerinUsa';
 import Services from '../Component/Common/Services';
-import icon1 from "../assets/common-images/icon1.png";
-import icon2 from "../assets/common-images/icon1.png";
-import icon3 from "../assets/common-images/icon1.png";
-import icon4 from "../assets/common-images/icon1.png";
-import icon5 from "../assets/common-images/icon1.png";
+import { servicesData } from '../data/data.js';
+
+
 const Home = () => {
   return (
     <div>
@@ -27,7 +25,7 @@ const Home = () => {
       Our <span className="text-cyan-400">Expertise</span>
     </>
   }
-  servicesData={servicesData}
+   servicesData={servicesData}
 />
 <Footer />
     </div>
