@@ -11,7 +11,7 @@ const Contactus = () => {
   
     <Navbar/>
     <ContactHero />
-    <div className="w-full px-6 md:px-12 py-12 bg-[#020617]">
+    <div className="w-full px-6 md:px-12 py-12 bg-[#060B14]">
 
   <div className="max-w-6xl mx-auto">
 
