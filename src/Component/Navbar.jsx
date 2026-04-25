@@ -4,7 +4,7 @@ import logo from "../assets/common-images/abco-logo.png";
 
 const Navbar = () => {
   return (
-  <div className="w-full absolute top-0 left-0 z-50 flex justify-center mt-4">
+  <div className="w-full fixed top-0 left-0 z-50 flex justify-center mt-4">
 
   <div className="w-[92%] max-w-6xl flex items-center justify-center gap-8">
 
