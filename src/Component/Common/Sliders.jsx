@@ -12,7 +12,7 @@ import s7 from "../../assets/Sliders/7.png";
 const sliderImages = [s1, s2, s3, s4, s5, s6, s7];
 
 // duplicate for smooth loop
-const loopImages = [...sliderImages, ...sliderImages];
+const loopImages = [...sliderImages, ...sliderImages , ...sliderImages , ...sliderImages , ...sliderImages];
 
 const Sliders = () => {
   return (
