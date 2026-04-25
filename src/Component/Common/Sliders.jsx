@@ -12,11 +12,11 @@ import s7 from "../../assets/Sliders/7.png";
 const sliderImages = [s1, s2, s3, s4, s5, s6, s7];
 
 // duplicate for smooth loop
-const loopImages = [...sliderImages, ...sliderImages];
+const loopImages = [...sliderImages, ...sliderImages , ...sliderImages , ...sliderImages , ...sliderImages];
 
 const Sliders = () => {
   return (
-    <div className="absolute bottom-10 w-full overflow-hidden z-10">
+    <div className="absolute bottom-10 w-full overflow-hidden z-10 mt-4">
 
       <div className="slider-marquee">
 

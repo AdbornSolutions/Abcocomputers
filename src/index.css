@@ -72,7 +72,7 @@ p {
 .slider-marquee {
   display: flex;
   width: max-content;
-  animation: slider-marquee 12s linear infinite;
+  animation: slider-marquee 10s linear infinite;
 }
 
 .slider-marquee:hover {

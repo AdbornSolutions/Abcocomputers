@@ -29,7 +29,7 @@ const Navbar = () => {
           <a href="/services">Services</a>
           <a href="/departments">Departments</a>
           <a href="/learning">Learning</a>
-          <a href="/contact">Contact</a>
+          <a href="/contactus">Contact us</a>
         </div>
 
         {/* BUTTON (DESKTOP) */}
@@ -59,7 +59,7 @@ const Navbar = () => {
           <a href="/services">Services</a>
           <a href="/departments">Departments</a>
           <a href="/learning">Learning</a>
-          <a href="/contact">Contact</a>
+          <a href="/contactus">Contact us</a>
 
           <button className="mt-4 px-6 py-3 rounded-full 
             bg-white text-black hover:bg-white/80 transition">
