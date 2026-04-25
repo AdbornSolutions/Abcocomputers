@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/common-images/abco-logo.png";
 
 import phoneIcon from "../assets/common-images/phone.png";
@@ -30,15 +31,15 @@ const Footer = () => {
 
       <div className="space-y-4 text-[13px]">
 
-        <div className="flex items-center gap-3">
+        <a href="tel:+919370181988" className="flex items-center gap-3 hover:text-[#2BD7D7] transition-colors cursor-pointer">
           <img src={phoneIcon} className="w-5 h-5" />
           <span>+91-9370181988</span>
-        </div>
+        </a>
 
-        <div className="flex items-center gap-3">
+        <a href="mailto:hr-manager@abcocomputers.com" className="flex items-center gap-3 hover:text-[#2BD7D7] transition-colors cursor-pointer">
           <img src={mailIcon} className="w-5 h-5" />
           <span className="break-all">hr-manager@abcocomputers.com</span>
-        </div>
+        </a>
 
         <div className="flex items-start gap-3">
           <img src={mapIcon} className="w-5 h-5 mt-1" />
@@ -55,12 +56,24 @@ const Footer = () => {
     <div>
       <h3 className="text-[18px] md:text-[22px] font-semibold mb-5">Menu</h3>
       <ul className="space-y-3 text-[14px] md:text-[15px]">
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Home</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">About us</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Services</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Department</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Learning</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Contact us</li>
+        <li>
+          <Link to="/" className="hover:text-[#2BD7D7] transition-colors">Home</Link>
+        </li>
+        <li>
+          <Link to="/about" className="hover:text-[#2BD7D7] transition-colors">About us</Link>
+        </li>
+        <li>
+          <Link to="/services" className="hover:text-[#2BD7D7] transition-colors">Services</Link>
+        </li>
+        <li>
+          <Link to="/department" className="hover:text-[#2BD7D7] transition-colors">Department</Link>
+        </li>
+        <li>
+          <Link to="/learning" className="hover:text-[#2BD7D7] transition-colors">Learning</Link>
+        </li>
+        <li>
+          <Link to="/contactus" className="hover:text-[#2BD7D7] transition-colors">Contact us</Link>
+        </li>
       </ul>
     </div>
 
@@ -68,9 +81,15 @@ const Footer = () => {
     <div>
       <h3 className="text-[18px] md:text-[22px] font-semibold mb-5">Explore</h3>
       <ul className="space-y-3 text-[14px] md:text-[15px]">
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Careers</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Blogs</li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">Success Stories</li>
+        <li>
+          <Link to="/services" className="hover:text-[#2BD7D7] transition-colors">Careers</Link>
+        </li>
+        <li>
+          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">Blogs</span>
+        </li>
+        <li>
+          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">Success Stories</span>
+        </li>
       </ul>
     </div>
 
@@ -78,14 +97,20 @@ const Footer = () => {
     <div>
       <h3 className="text-[18px] md:text-[22px] font-semibold mb-5">Policies</h3>
       <ul className="space-y-3 text-[14px] md:text-[15px]">
-        <li className="hover:text-[#2BD7D7] cursor-pointer">
-          Term & Condition
+        <li>
+          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">
+            Term & Condition
+          </span>
         </li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">
-          Privacy Policy
+        <li>
+          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">
+            Privacy Policy
+          </span>
         </li>
-        <li className="hover:text-[#2BD7D7] cursor-pointer">
-          Refund & Return Policy
+        <li>
+          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">
+            Refund & Return Policy
+          </span>
         </li>
       </ul>
     </div>
