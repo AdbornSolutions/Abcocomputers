@@ -48,3 +48,14 @@ p {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
