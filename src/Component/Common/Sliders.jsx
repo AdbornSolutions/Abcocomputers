@@ -11,36 +11,26 @@ import s7 from "../../assets/Sliders/7.png";
 
 const sliderImages = [s1, s2, s3, s4, s5, s6, s7];
 
+// duplicate for smooth loop
+const loopImages = [...sliderImages, ...sliderImages];
+
 const Sliders = () => {
   return (
     <div className="absolute bottom-10 w-full overflow-hidden z-10">
-      <div className="flex animate-marquee">
 
-        {/* WRAPPER 1 */}
-        <div className="flex shrink-0">
-          {sliderImages.map((img, i) => (
-            <img
-              key={`first-${i}`}
-              src={img}
-              className="h-10 mx-5 opacity-70 hover:opacity-100 transition"
-              alt="logo"
-            />
-          ))}
-        </div>
+      <div className="slider-marquee">
 
-        {/* WRAPPER 2 (duplicate) */}
-        <div className="flex shrink-0">
-          {sliderImages.map((img, i) => (
-            <img
-              key={`second-${i}`}
-              src={img}
-              className="h-10 mx-5 opacity-70 hover:opacity-100 transition"
-              alt="logo"
-            />
-          ))}
-        </div>
+        {loopImages.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            className="h-10 mx-6 opacity-70 hover:opacity-100 transition duration-300"
+            alt="logo"
+          />
+        ))}
 
       </div>
+
     </div>
   );
 };
