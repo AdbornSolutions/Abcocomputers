@@ -6,7 +6,8 @@ import OurTeam from "../Component/Home-page/OurTeam";
 import { servicesData } from '../data/data';
 import Navbar from '../Component/Navbar';
 import YourGateway from '../Component/Home-page/YourGateway';
-
+import Testimonials from '../Component/Common/Testimonials';
+import Contact from '../Component/Common/Contact';
 
 const Home = () => {
   return (
@@ -28,7 +29,8 @@ const Home = () => {
 />
       <OurTeam />
       <YourGateway />
-  
+      <Testimonials/>
+      <Contact />
       <Footer />
     </div>
   );
