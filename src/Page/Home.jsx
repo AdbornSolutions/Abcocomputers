@@ -1,14 +1,9 @@
 import React from 'react'
-import bg from "../assets/home-page/home-bg.png";
-import HomeSection from '../Component/Common/HeroSection';
 import Footer from '../Component/Footer';
-import CareerinUsa from '../Component/Home-page/CareerinUsa';
 import Services from '../Component/Common/Services';
-import icon1 from "../assets/common-images/icon1.png";
-import icon2 from "../assets/common-images/icon1.png";
-import icon3 from "../assets/common-images/icon1.png";
-import icon4 from "../assets/common-images/icon1.png";
-import icon5 from "../assets/common-images/icon1.png";
+import HomeHeroSection from '../Component/Home-page/HomeHeroSection';
+import { servicesData } from '../data/data';
+
 const Home = () => {
   return (
     <div>
