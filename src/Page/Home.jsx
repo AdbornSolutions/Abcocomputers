@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../Component/Footer';
 import Services from '../Component/Common/Services';
 import HomeHeroSection from '../Component/Home-page/HomeHeroSection';
+import OurTeam from "../Component/Home-page/OurTeam";
 import { servicesData } from '../data/data';
 
 const Home = () => {
@@ -21,6 +22,8 @@ const Home = () => {
   }
   servicesData={servicesData}
 />
+
+<OurTeam />
 <Footer />
     </div>
   );
