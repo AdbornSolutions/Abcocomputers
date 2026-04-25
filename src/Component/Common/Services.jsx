@@ -12,10 +12,12 @@ const Services = ({
       <div className="w-full max-w-6xl">
 
         {/* HEADER */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           
           {title && (
-            <span className="px-4 py-1 rounded-full border border-white/20 text-gray-300 text-sm">
+            <span className="inline-block px-5 py-2 mb-6 rounded-full 
+            bg-white/10 backdrop-blur-md border border-white/20 
+            text-gray-300 text-sm shadow-sm">
               {title}
             </span>
           )}

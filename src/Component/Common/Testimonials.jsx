@@ -65,8 +65,9 @@ const Testimonials = () => {
         <div className="max-w-6xl mx-auto text-center">
 
           {/* TAG */}
-          <div className="inline-block px-4 py-1 mb-6 rounded-full 
-          bg-white/10 text-gray-300 text-sm">
+          <div className="inline-block px-5 py-2 mb-6 rounded-full 
+            bg-white/10 backdrop-blur-md border border-white/20 
+            text-gray-300 text-sm shadow-sm">
             Testimonials
           </div>
 
