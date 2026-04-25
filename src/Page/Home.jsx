@@ -25,8 +25,9 @@ const Home = () => {
   }
   servicesData={servicesData}
 />
-
-<Footer />
+      <OurTeam />
+      <YourGateway />
+      <Footer />
     </div>
   );
 };
