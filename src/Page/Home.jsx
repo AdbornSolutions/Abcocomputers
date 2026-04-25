@@ -7,6 +7,7 @@ import { servicesData } from '../data/data';
 import Navbar from '../Component/Navbar';
 import YourGateway from '../Component/Home-page/YourGateway';
 
+
 const Home = () => {
   return (
     <div>
@@ -27,6 +28,7 @@ const Home = () => {
 />
       <OurTeam />
       <YourGateway />
+  
       <Footer />
     </div>
   );
