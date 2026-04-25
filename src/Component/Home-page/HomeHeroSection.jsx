@@ -40,7 +40,11 @@ const HomeHeroSection = () => {
               Get Started
             </button>
 
-            <button className="px-6 py-3 w-44 rounded-full bg-white text-black hover:bg-white/10 hover:text-white transition">
+            <button className="px-6 py-3 w-44 rounded-full 
+              bg-white text-black border border-black
+              hover:bg-[linear-gradient(90deg,_#FFFFFF_0%,_#2BD7D7_87.5%)] 
+              hover:border-[#2BD7D7]
+              transition duration-300">
               Book a call
             </button>
           </div>

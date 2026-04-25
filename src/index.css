@@ -20,26 +20,66 @@ p {
 }
 
 /* Marquee animation */
-@keyframes marquee {
+/* ===== TESTIMONIAL MARQUEE ===== */
+/* ROW 1 */
+@keyframes marquee-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-10%);
+    transform: translateX(-50%);
   }
 }
 
-/* Marquee animation */
-.animate-marquee {
+.marquee-left {
   display: flex;
   width: max-content;
-  animation: marquee 5s linear infinite;
+  animation: marquee-left 22s linear infinite;
 }
 
-/* Marquee animation hover effect */
-.animate-marquee:hover {
+/* ROW 2 (reverse) */
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 22s linear infinite;
+}
+
+/* Hover pause */
+.marquee-left:hover,
+.marquee-right:hover {
   animation-play-state: paused;
 }
+
+/* ===== SLIDER MARQUEE (LOGOS / IMAGES) ===== */
+@keyframes slider-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider-marquee {
+  display: flex;
+  width: max-content;
+  animation: slider-marquee 12s linear infinite;
+}
+
+.slider-marquee:hover {
+  animation-play-state: paused;
+}
+
+
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -50,12 +90,3 @@ p {
 }
 
 
-.marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 10s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
-}

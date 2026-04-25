@@ -11,6 +11,7 @@ import {
   FaRocket,
 } from "react-icons/fa";
 
+// ICON MAP
 const iconMap = {
   "Comprehensive Financial Support": <FaMoneyBillWave />,
   "Guidance and Mentorship": <FaUserGraduate />,
@@ -21,73 +22,76 @@ const iconMap = {
 };
 
 const YourGateway = () => {
-  const sliderRef = useRef();
+  const sliderRef = useRef(null);
 
-  const scrollLeft = () => {
-    sliderRef.current.scrollBy({ left: -350, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    sliderRef.current.scrollBy({ left: 350, behavior: "smooth" });
+  const scroll = (direction) => {
+    if (!sliderRef.current) return;
+    const scrollAmount = 350;
+    sliderRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <div className="w-full bg-[#020617] text-white py-12 md:py-16 px-4 flex justify-center">
-      <div className="w-full max-w-6xl relative">
+    <div className="w-full bg-[#020617] text-white py-12 md:py-16">
 
-        {/* ===== HEADING ===== */}
-        <div className="mb-6 text-center md:text-left">
-          <h2
-            className="text-[28px] sm:text-[34px] md:text-[42px] font-medium leading-tight 
-            bg-[linear-gradient(95deg,_#FFFFFF_0.2%,_#2BD7D7_30%)] 
-            bg-clip-text text-transparent"
-          >
-            Your Gateway
-            <br />
-            to a Promising Future
-          </h2>
-
-          <p className="text-white mt-3 text-[14px] sm:text-[16px] md:text-[20px]">
-            "Where talent meets opportunity, and innovation fuels success."
-          </p>
-        </div>
-
-        {/* ===== LEFT ARROW ===== */}
-        <button
-          onClick={scrollLeft}
-          className="hidden md:flex items-center justify-center 
-          absolute left-[-30px] top-[65%] -translate-y-1/2 
-          w-8 h-8 rounded-full border border-white/20 
-          bg-[#0b1220] hover:bg-white/10 transition z-10"
+      {/* ===== HEADING ===== */}
+      <div className="w-full px-4 md:px-10 lg:px-20 mb-8 text-center md:text-left">
+        <h2
+          className="text-[28px] sm:text-[34px] md:text-[42px] font-medium leading-tight 
+          bg-[linear-gradient(95deg,_#FFFFFF_0.2%,_#2BD7D7_30%)] 
+          bg-clip-text text-transparent"
         >
-          <FaChevronLeft size={12} />
+          Your Gateway
+          <br />
+          to a Promising Future
+        </h2>
+
+        <p className="text-white mt-3 text-[14px] sm:text-[16px] md:text-[20px]">
+          "Where talent meets opportunity, and innovation fuels success."
+        </p>
+      </div>
+
+      {/* ===== SLIDER SECTION ===== */}
+      <div className="relative w-full">
+
+        {/* LEFT ARROW */}
+        <button
+          onClick={() => scroll("left")}
+          className="hidden md:flex items-center justify-center 
+          absolute left-4 md:left-10 bottom-[-80px] -translate-y-1/2 
+          w-10 h-10 rounded-full border border-white/20 
+          bg-[#0b1220] hover:bg-white/10 transition z-20"
+        >
+          <FaChevronLeft size={14} />
         </button>
 
-        {/* ===== RIGHT ARROW ===== */}
+        {/* RIGHT ARROW */}
         <button
-          onClick={scrollRight}
+          onClick={() => scroll("right")}
           className="hidden md:flex items-center justify-center 
-          absolute right-[-30px] top-[65%] -translate-y-1/2 
-          w-8 h-8 rounded-full border border-white/20 
-          bg-[#0b1220] hover:bg-white/10 transition z-10"
+          absolute right-4 md:right-10 bottom-[-80px] -translate-y-1/2 
+          w-10 h-10 rounded-full border border-white/20 
+          bg-[#0b1220] hover:bg-white/10 transition z-20"
         >
-          <FaChevronRight size={12} />
+          <FaChevronRight size={14} />
         </button>
 
-        {/* ===== SLIDER ===== */}
+        {/* SLIDER */}
         <div
           ref={sliderRef}
-          className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-2 md:px-4"
+          className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth scrollbar-hide 
+          px-[60px] md:px-[120px]"
         >
           {gatewayData.map((item, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 
+              className="flex-shrink-0 
               w-[85%] sm:w-[300px] md:w-[380px] lg:w-[401px] 
               h-auto md:h-[205px]
-              ${index === 0 ? "ml-2 md:ml-[40px]" : ""}
               bg-[#0b1220] p-4 md:p-5 rounded-[20px] md:rounded-[30px] 
-              border border-white/10 flex flex-col justify-between`}
+              border border-white/10 flex flex-col justify-between"
             >
               
               {/* ICON + TITLE */}

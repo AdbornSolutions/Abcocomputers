@@ -84,22 +84,22 @@ const Testimonials = () => {
         <div className="mt-12">
 
           {/* ROW 1 */}
-          <div className="overflow-hidden">
-            <div className="marquee">
-              {loopData.map((item, i) => (
-                <Card key={i} {...item} />
-              ))}
-            </div>
-          </div>
+<div className="overflow-hidden">
+  <div className="marquee-left">
+    {loopData.map((item, i) => (
+      <Card key={i} {...item} />
+    ))}
+  </div>
+</div>
 
-          {/* ROW 2 */}
-          <div className="overflow-hidden mt-6">
-            <div className="marquee" style={{ animationDirection: "reverse" }}>
-              {loopData.map((item, i) => (
-                <Card key={i} {...item} />
-              ))}
-            </div>
-          </div>
+{/* ROW 2 */}
+<div className="overflow-hidden mt-6">
+  <div className="marquee-right">
+    {loopData.map((item, i) => (
+      <Card key={i} {...item} />
+    ))}
+  </div>
+</div>
 
         </div>
 
