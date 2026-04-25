@@ -16,7 +16,7 @@ const loopImages = [...sliderImages, ...sliderImages , ...sliderImages , ...slid
 
 const Sliders = () => {
   return (
-    <div className="absolute bottom-10 w-full overflow-hidden z-10">
+    <div className="absolute bottom-10 w-full overflow-hidden z-10 mt-4">
 
       <div className="slider-marquee">
 
