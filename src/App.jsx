@@ -6,7 +6,6 @@ import Navbar from './Component/Navbar'
 const App = () => {
   return (
     <>
-    <Navbar/>
     <Home/>
     
     </>

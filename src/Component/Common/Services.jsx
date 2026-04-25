@@ -48,21 +48,21 @@ const Services = ({
                   <img 
                     src={item.icon} 
                     alt={item.title} 
-                    className="w-10 h-10 object-contain opacity-80"
+                    className="w-9 h-9 object-contain opacity-80"
                   />
                 </div>
               )}
 
               {/* TITLE */}
               {item.title && (
-                <h3 className="font-heading text-[20px] mb-2">
+                <h3 className="font-heading text-[25px] mb-2">
                   {item.title}
                 </h3>
               )}
 
               {/* DESCRIPTION */}
               {item.desc && (
-                <p className="text-gray-400 text-[14px] leading-[1.6] font-body">
+                <p className="text-gray-400 text-[14px] leading-[1.6] font-body ">
                   {item.desc}
                 </p>
               )}
