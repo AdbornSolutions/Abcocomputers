@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-
 // Pages
 import Home from "./Page/Home";
 import About from "./Page/About";
@@ -10,18 +9,37 @@ import Services from "./Page/Services/Services";
 import Department from "./Page/Departments/Department";
 import Learning from "./Page/Learning";
 
+// Department Pages
+import HrOnboarding from "./Page/Departments/HrOnboarding";
+import Admission from "./Page/Departments/Admission";
+import Accounts from "./Page/Departments/Account";
+import Training from "./Page/Departments/Training";
+import Marketing from "./Page/Departments/Marketing";
+import Contracts from "./Page/Departments/Contracts";
+import Immigration from "./Page/Departments/immigrations&legal";
+import Advisory from "./Page/Departments/AdvisoryTeam";
+
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contactus" element={<Contactus />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/department" element={<Department />} />
-        <Route path="/learning" element={<Learning />} />
-      </Routes>
-    </>
+    <Routes>
+      {/* MAIN */}
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contactus" element={<Contactus />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/department" element={<Department />} />
+      <Route path="/learning" element={<Learning />} />
+
+      {/* DEPARTMENTS */}
+      <Route path="/hr-onboarding" element={<HrOnboarding />} />
+      <Route path="/admission" element={<Admission />} />
+      <Route path="/accounts" element={<Accounts />} />
+      <Route path="/training" element={<Training />} />
+      <Route path="/marketing" element={<Marketing />} />
+      <Route path="/contracts" element={<Contracts />} />
+      <Route path="/immigration" element={<Immigration />} />
+      <Route path="/advisory" element={<Advisory />} />
+    </Routes>
   );
 };
 

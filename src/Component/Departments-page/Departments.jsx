@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Card1 from "../../assets/DepartmentPage/Departmentscard/1.png";
 import Card2 from "../../assets/DepartmentPage/Departmentscard/2.png";
@@ -14,41 +15,49 @@ const departments = [
     icon: Card1,
     title: "HR & Onboarding Department",
     desc: "Manages recruitment coordination, candidate onboarding processes, documentation verification, and ensures smooth transition into organizational roles.",
+    link: "/hr-onboarding",
   },
   {
     icon: Card2,
     title: "Admission Department",
     desc: "Handles university selection, application processing, document preparation, and admission tracking for master’s programs in the USA.",
+    link: "/admission",
   },
   {
     icon: Card3,
     title: "Accounts Department",
     desc: "Handles financial transactions, payment processing, scholarship documentation, and maintains accurate financial records.",
+    link: "/accounts",
   },
   {
     icon: Card4,
     title: "Training Department",
     desc: "Provides industry-relevant IT skill development, technical training, resume preparation, and interview readiness programs.",
+    link: "/training",
   },
   {
     icon: Card5,
     title: "Marketing Department",
     desc: "Promotes candidate profiles to hiring partners, manages employer outreach, and strengthens placement opportunities.",
+    link: "/marketing",
   },
   {
     icon: Card6,
     title: "Contracts Department",
     desc: "Oversees employment agreements, offer letters, compliance documentation, and ensures transparent contractual processes.",
+    link: "/contracts",
   },
   {
     icon: Card7,
     title: "Immigration & Legal Department",
     desc: "Manages visa documentation, legal compliance, immigration procedures, and provides strategic guidance for F1, H1B, and Green Card processes.",
+    link: "/immigration",
   },
   {
     icon: Card8,
     title: "Advisory Team",
     desc: "Offers career counseling, long-term planning strategies, and personalized mentorship for professional growth in the USA.",
+    link: "/advisory",
   },
 ];
 
@@ -71,7 +80,7 @@ const Departments = () => {
           Dedicated Expertise. Unified Impact.
         </h2>
 
-        <p className="text-white mt-4 max-w-l mx-auto text-[16px] md:text-[20px]">
+        <p className="text-white mt-4 max-w-3xl mx-auto text-[16px] md:text-[20px]">
           Our specialized teams collaborate seamlessly, leveraging advanced methodologies 
           and industry knowledge <br />to deliver reliable, results-driven consulting solutions.
         </p>
@@ -82,44 +91,45 @@ const Departments = () => {
         grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
         gap-6">
 
-       {departments.map((item, index) => (
-          <div
-            key={index}
-            className="w-full h-[221px] 
-            bg-[#0b1220] p-5 rounded-[20px] 
-            border border-white/10 
-            flex flex-col justify-between
-            hover:shadow-[0_0_20px_rgba(43,215,215,0.2)] 
-            hover:border-[#2BD7D7]/30
-            hover:-translate-y-1
-            transition duration-300"
-          >
+        {departments.map((item, index) => (
+          <Link to={item.link} key={index}>
+            <div
+              className="w-full h-[221px] 
+              bg-[#0b1220] p-5 rounded-[20px] 
+              border border-white/10 
+              flex flex-col justify-between
+              hover:shadow-[0_0_20px_rgba(43,215,215,0.2)] 
+              hover:border-[#2BD7D7]/30
+              hover:-translate-y-1
+              transition duration-300 cursor-pointer"
+            >
 
-           {/* 🔥 ICON + TITLE SAME LINE */}
-            <div className="flex items-start gap-3">
+              {/* ICON + TITLE */}
+              <div className="flex items-start gap-3">
 
-              <div className="w-12 h-12 flex items-center justify-center 
-              bg-white/10 rounded-full flex-shrink-0">
-                <img src={item.icon} alt="icon" className="w-7 h-7 object-contain" />
+                <div className="w-12 h-12 flex items-center justify-center 
+                bg-white/10 rounded-full flex-shrink-0">
+                  <img src={item.icon} alt="icon" className="w-7 h-7 object-contain" />
+                </div>
+
+                <h3 className="text-[20px] font-semibold leading-snug">
+                  {item.title}
+                </h3>
               </div>
 
-              <h3 className="text-[24px] font-semibold leading-snug">
-                {item.title}
-              </h3>
-            </div>
-
               {/* DESCRIPTION */}
-            <p className="text-gray-400 text-[14px] leading-relaxed line-clamp-3 mt-3">
-              {item.desc}
-            </p>
+              <p className="text-gray-400 text-[14px] leading-relaxed line-clamp-3 mt-3">
+                {item.desc}
+              </p>
 
-            {/* LINK */}
-            <span className="text-gray-300 text-xs cursor-pointer 
-            hover:text-[#2BD7D7] transition">
-              Learn More →
+              {/* LINK TEXT */}
+              <span className="text-gray-300 text-xs 
+              hover:text-[#2BD7D7] transition">
+                Learn More →
               </span>
 
-         </div>
+            </div>
+          </Link>
         ))}
 
       </div>
