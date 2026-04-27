@@ -6,7 +6,7 @@ import rightImg from "../../assets/home-page/Rectangle9.png";
 
 const CareerinUsa = () => {
   return (
-    <div className="w-full bg-[#020617] py-16 md:py-20 px-4 md:px-6 flex justify-center">
+    <div className="w-full bg-[#060B14] py-16 md:py-20 px-4 md:px-6 flex justify-center">
       
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10">
 
@@ -47,8 +47,7 @@ const CareerinUsa = () => {
             className="w-52 md:w-64 h-64 md:h-80 object-cover rounded-[80px] md:rounded-[120px]"
           />
         </div>
-
-      </div>
+     </div>
     </div>
   );
 };

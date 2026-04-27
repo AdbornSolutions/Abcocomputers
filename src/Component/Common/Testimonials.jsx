@@ -57,7 +57,7 @@ const Card = ({ name, location, text }) => (
 
 const Testimonials = () => {
   return (
-    <div className="w-full bg-[#020617] py-20 px-4 flex justify-center">
+    <div className="w-full bg-[#060B14] py-20 px-4 flex justify-center">
       
       {/* 🔥 FULL WIDTH WRAPPER */}
       <div className="w-full relative overflow-hidden">
@@ -105,11 +105,11 @@ const Testimonials = () => {
 
         {/* 🔥 LEFT FADE (FLUID) */}
         <div className="pointer-events-none absolute top-0 left-0 h-full w-[140px] md:w-[180px] 
-        bg-gradient-to-r from-[#020617] to-transparent z-20"></div>
+        bg-gradient-to-r from-[#060B14] to-transparent z-20"></div>
 
         {/* 🔥 RIGHT FADE (FLUID) */}
         <div className="pointer-events-none absolute top-0 right-0 h-full w-[140px] md:w-[180px] 
-        bg-gradient-to-l from-[#020617] to-transparent z-20"></div>
+        bg-gradient-to-l from-[#060B14] to-transparent z-20"></div>
 
       </div>
     </div>

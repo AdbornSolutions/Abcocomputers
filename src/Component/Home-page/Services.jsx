@@ -7,7 +7,7 @@ const Services = ({
   columns = "lg:grid-cols-3", // 👈 flexible layout
 }) => {
   return (
-    <section className="w-full bg-[#020617] py-16 px-4 flex justify-center">
+    <section className="w-full bg-[#060B14] py-16 px-4 flex justify-center">
       
       <div className="w-full max-w-6xl">
 

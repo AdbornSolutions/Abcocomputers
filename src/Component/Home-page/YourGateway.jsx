@@ -34,7 +34,7 @@ const YourGateway = () => {
   };
 
   return (
-    <div className="w-full bg-[#020617] text-white py-12 md:py-16">
+    <div className="w-full bg-[#060B14] text-white py-12 md:py-16">
 
       {/* ===== HEADING ===== */}
       <div className="w-full px-4 md:px-10 lg:px-20 mb-8 text-center md:text-left">

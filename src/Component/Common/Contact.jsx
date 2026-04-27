@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div className="w-full bg-[#020617] py-20 px-4 flex justify-center">
+    <div className="w-full bg-[#060B14] py-20 px-4 flex justify-center">
 
       {/* CONTAINER */}
       <div className="w-full max-w-4xl text-center text-white">

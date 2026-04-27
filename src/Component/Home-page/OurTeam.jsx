@@ -10,7 +10,7 @@ import iconPersonal from "../../assets/home-page/team-of-2.png";
 
 const OurTeam = () => {
   return (
-    <div className="w-full bg-[#020617] py-16 flex justify-center px-4">
+    <div className="w-full bg-[#060B14] py-16 flex justify-center px-4">
 
       {/* MAIN CONTAINER */}
       <div className="relative w-full max-w-6xl rounded-2xl overflow-hidden">

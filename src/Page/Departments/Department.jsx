@@ -1,10 +1,27 @@
 import React from 'react'
+import Navbar from '../../Component/Navbar'
+import DepartmentHero from './Department-hero'
+import Overview from '../../Component/Departments-page/Overview'
+import Departments from '../../Component/Departments-page/Departments'
+import OurStructure from '../../Component/Departments-page/ourStruscture'
+import Testimonials from '../../Component/Common/Testimonials'
+import Contact from '../../Component/Common/Contact'
+import Footer from '../../Component/Footer'
+import OurTeam from '../../Component/Common/Ourteam'
 
 const Department = () => {
   return (
-    <div className="w-full bg-[#060B14] text-white py-16 px-4 sm:px-6 md:px-10 lg:px-16">
-      <h1 className="text-[28px] text-white sm:text-[32px] md:text-[40px]">Department</h1>
-    </div>
+    <>
+      <Navbar />
+      <DepartmentHero />
+      <Overview />
+      <Departments />
+      <OurStructure />
+      <OurTeam />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </>
   )
 }
 

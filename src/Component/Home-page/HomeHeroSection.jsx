@@ -21,7 +21,7 @@ const HomeHeroSection = () => {
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-[#020617]/70"></div>
+        <div className="absolute inset-0 bg-[##060B14]/70"></div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
@@ -54,7 +54,7 @@ const HomeHeroSection = () => {
 
         {/* GRADIENT */}
         <div className="absolute bottom-0 left-0 w-full h-40 flex-1
-          bg-gradient-to-b from-transparent via-[#020617]/90 to-[#020617] z-10">
+          bg-gradient-to-b from-transparent via-[#060B14]/90 to-[#060B14] z-10">
         </div>
       </div>
         {/* SLIDER COMPONENT */}
