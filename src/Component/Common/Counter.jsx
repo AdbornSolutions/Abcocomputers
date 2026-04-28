@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Counter = ({ end, duration = 2000 }) => {
+const Counter = ({ end, duration = 2000, suffix = "+" }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Counter = ({ end, duration = 2000 }) => {
     return () => clearInterval(timer);
   }, [end, duration]);
 
-  return <span>{count}+</span>;
+  return <span>{count}{suffix}</span>;
 };
 
 export default Counter;

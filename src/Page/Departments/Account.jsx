@@ -15,6 +15,43 @@ import Footer from "../../Component/Footer";
 import serviceImg from "../../assets/DepartmentPage/aboutservice2.png";
 import serviceImg2 from "../../assets/DepartmentPage/accout-timeline.png";
 
+import i1 from "../../assets/DepartmentPage/WHYchooseOAT/1.png";
+import i2 from "../../assets/DepartmentPage/WHYchooseOAT/2.png";
+import i3 from "../../assets/DepartmentPage/WHYchooseOAT/3.png";
+import i4 from "../../assets/DepartmentPage/WHYchooseOAT/4.png";
+import i5 from "../../assets/DepartmentPage/WHYchooseOAT/5.png";
+
+
+const data = [
+  {
+    icon: i1,
+    title: "Strategic University Matching",
+    desc: "We align your profile with best universities.",
+    highlight: true,
+  },
+  {
+    icon: i3,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+  {
+    icon: i4,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+  {
+    icon: i5,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+  {
+    icon: i2,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+];
+
+
 const Account = () => {
   return (
     <>
@@ -70,7 +107,12 @@ const Account = () => {
       />
 
       {/* ================= WHY CHOOSE ================= */}
-      <WhyChooseOurAT />
+      <WhyChooseOurAT
+        tag="Why Choose Us"
+        heading="Why Our Team Stands Apart"
+        subheading="Structured, transparent and result-driven approach."
+        data={data}
+      />
 
       {/* ================= FAQ ================= */}
       <FAQ

@@ -10,12 +10,60 @@ import FAQ from "../../Component/Common/FAQ";
 import DepartmentHero from "../../Component/Departments-page/DHeroSec";
 import AboutServiceSection from "../../Component/Departments-page/AboutthisService";
 import CoretrainingAreas from "../../Component/Departments-page/CoretrainingAreas";
-import OurTrainingMethod from "../../Component/Departments-page/OurTrainingMethod";
+import TrainingMethodTemplate from "../../Component/Departments-page/OurTrainingMethod";
 import WhyChooseOurAT from "../../Component/Departments-page/WhyChooseOurAT";
+import Counter from "../../Component/Common/Counter"; // path adjust kar
 
 // 🔥 IMAGE
 import trainingImg from "../../assets/DepartmentPage/AboutthisServices.png"; // apna image path dal
 import ToolsTech from "../../Component/Departments-page/Tools&Tech";
+import CurveArrow from "../../assets/DepartmentPage/curved.png";
+
+
+import i1 from "../../assets/DepartmentPage/WHYchooseOAT/1.png";
+import i2 from "../../assets/DepartmentPage/WHYchooseOAT/2.png";
+import i3 from "../../assets/DepartmentPage/WHYchooseOAT/3.png";
+import i4 from "../../assets/DepartmentPage/WHYchooseOAT/4.png";
+import i5 from "../../assets/DepartmentPage/WHYchooseOAT/5.png";
+
+const steps = [
+  { id: "01", title: "Skills Assessments" },
+  { id: "02", title: "Customized Learning Plan" },
+  { id: "03", title: "Hands-On Project Training" },
+  { id: "04", title: "Real-World Case Studies" },
+  { id: "05", title: "Mocks Interviews" },
+  { id: "06", title: "Placement Readiness" },
+];
+
+
+const data = [
+  {
+    icon: i1,
+    title: "Strategic University Matching",
+    desc: "We align your profile with best universities.",
+    highlight: true,
+  },
+  {
+    icon: i3,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+  {
+    icon: i4,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+  {
+    icon: i5,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+  {
+    icon: i2,
+    title: "Error-Free Documentation",
+    desc: "We ensure zero mistakes in documents.",
+  },
+];
 
 // 🔥 FAQ DATA
 const faqData = [
@@ -54,6 +102,36 @@ const Training = () => {
         primaryBtn="Explore Training Programs"
         secondaryBtn="Start Skill Assessment"
       />
+      {/* ===== STATS ===== */}
+      <div
+    className="bg-[#060B14]  flex flex-wrap justify-center items-center gap-4 text-[24px] md:text-[24px] text-gray-300"
+    style={{
+      fontFamily: "Merienda One",
+      fontWeight: 400,
+      fontSize: "24px",
+      lineHeight: "100%",
+      letterSpacing: "0%",
+    }}
+  >
+
+  <div className="flex items-center gap-1">
+    <Counter end={1000} /> 
+    <span>Professionals Trained</span>
+  </div>
+
+  <span className="hidden sm:block">|</span>
+
+  <div>
+    High Placement Success Rate
+  </div>
+
+  <span className="hidden sm:block">|</span>
+
+  <div>
+    Real-World Project Experience
+  </div>
+
+</div>
 
       {/* 🔥 ABOUT */}
       <AboutServiceSection
@@ -69,10 +147,23 @@ const Training = () => {
       <CoretrainingAreas />
 
       {/* 🔥 TRAINING METHOD */}
-      <OurTrainingMethod />
+      <TrainingMethodTemplate
+  tag="Our Training Methodology"
+  heading="Our Structured Learning Process"
+  description="A step-by-step approach that guides students through personalized skill assessments, hands-on training, real-world experience, and placement readiness."
+  steps={steps}
+  arrowImg={CurveArrow}
+/>
 
       {/* 🔥 WHY CHOOSE */}
-      <WhyChooseOurAT />
+      {/* ================= WHY CHOOSE ================= */}
+      <WhyChooseOurAT
+        tag="Why Choose Us"
+        heading="Why Our Team Stands Apart"
+        subheading="Structured, transparent and result-driven approach."
+        data={data}
+      />
+            
 
       {/* 🔥 TOOLS & TECHNOLOGIES */}
       <ToolsTech />
