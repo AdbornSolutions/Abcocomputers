@@ -1,0 +1,122 @@
+import React from "react";
+import departmentHero from "../../assets/ServicePage/service-bg.png";
+import Counter from "../../Component/Common/Counter";
+
+const ServiceHero = () => {
+  return (
+    <section className="w-full min-h-screen bg-[#060B14] text-white flex items-center px-4 md:px-10 lg:px-20 relative overflow-hidden">
+
+      {/* 🔵 CYAN GLOW */}
+
+      {/* ⚪ WHITE BLUR ELLIPSE (LEFT) */}
+      <div
+        className="absolute z-0"
+        style={{
+          width: "147px",
+          height: "147px",
+          top: "69px",
+          left: "0px",
+          background: "#FFFFFF",
+          opacity: 1,
+          filter: "blur(261.66px)",
+        }}
+      ></div>
+
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center w-full">
+
+        {/* ===== LEFT ===== */}
+        <div>
+
+          {/* HEADING */}
+          <h1 className="text-[32px] sm:text-[40px] md:text-[52px] lg:text-[47px] font-semibold leading-tight">
+           Innovative <br />
+IT Solutions Delivered
+          </h1>
+
+          {/* DESCRIPTION */}
+          <p className="text-gray-400 mt-6 text-[14px] md:text-[16px] max-w-xl leading-relaxed">
+           We provide end-to-end IT software and consulting services that help businesses innovate, scale efficiently, strengthen digital capabilities, and achieve measurable growth through technology-driven solutions.
+If you want it more enterprise-focused, startup-friendly, or USA-market oriented, tell me and I’ll refine it further.
+          </p>
+
+          {/* BUTTON */}
+          <button
+  className="mt-8 px-8 py-3 rounded-full text-white font-medium text-lg 
+  relative overflow-hidden transition duration-300 hover:scale-105"
+  style={{
+    background: "linear-gradient(180deg, #0073FF 0%, #0DA2FF 100%)",
+
+    border: "0px solid",
+    borderImageSlice: 1,
+    borderImageSource:
+      "linear-gradient(180deg, rgba(0, 136, 255, 0.3) 0%, rgba(119, 192, 255, 0.3) 100%)",
+
+    boxShadow: `
+      0px 0px 0px 5px #FFFFFF,
+      0px 0px 0px 4px #E0E9F2,
+      0px 3.71px 4.85px #57B1FF27,
+      0px 10.27px 13.4px #57B1FF38,
+      0px 24.72px 32.26px #57B1FF30,
+      0px 42px 107px #57B1FF57,
+      inset 0px 1px 4px 2px #D2EAFF,
+      inset 0px 1px 18px 2px #D2EAFF
+    `,
+  }}
+>
+  Explore Our Department
+</button>
+
+        </div>
+
+        {/* ===== RIGHT IMAGE ===== */}
+        <div className="flex justify-center md:justify-end">
+          <img
+            src={departmentHero}
+            alt="Department"
+            className="w-[250px] sm:w-[320px] md:w-[420px] lg:w-[500px] object-contain"
+          />
+        </div>
+
+      </div>
+
+
+
+{/* ===== BOTTOM STATS ===== */}
+<div className="absolute bottom-6 left-0 w-full flex justify-center z-10">
+
+  <div
+    className="flex gap-6 sm:gap-10 md:gap-16 text-white"
+    style={{
+      fontFamily: "Merienda One",
+      fontWeight: 400,
+      fontSize: "30px",
+      lineHeight: "100%",
+      letterSpacing: "0%",
+    }}
+  >
+    
+    <span className="flex items-center gap-1">
+      <Counter end={380} /> User Active
+    </span>
+
+    <span>|</span>
+
+    <span className="flex items-center gap-1">
+      <Counter end={230} /> Trusted By Company
+    </span>
+
+    <span>|</span>
+
+    <span className="flex items-center gap-1">
+      <Counter end={500} /> Reviews
+    </span>
+
+  </div>
+</div>
+
+    </section>
+  );
+};
+
+export default ServiceHero;
