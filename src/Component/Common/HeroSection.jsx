@@ -12,7 +12,7 @@ const HomeSection = ({
 
       {/* 🔥 TOP GLOW (MAIN ELLIPSE) */}
       <div className="absolute top-[-300px] left-1/2 -translate-x-1/2 
-      w-[900px] h-[900px] rounded-full 
+      w-[900px] h-[800px] rounded-full 
       bg-[#2BD7D7] opacity-100 blur-[100px]"></div>
 
       {/* 🔥 SECOND SOFT GLOW */}
@@ -34,9 +34,9 @@ const HomeSection = ({
         )}
 
         {/* Main Heading */}
-        <h1 className="font-heading text-[30px] sm:text-[36px] md:text-[48px] leading-tight">
-          {heading}
-        </h1>
+       <h1 className="font-heading text-[32px] md:text-[48px] leading-tight text-center">
+  {heading}
+</h1>
 
         {/* Description */}
         <p className="mt-4 text-gray-300 text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed">
@@ -44,32 +44,33 @@ const HomeSection = ({
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex gap-4 flex-wrap justify-center">
+        <div className="mt-6 flex gap-3 flex-wrap justify-center">
 
-          {/* PRIMARY BUTTON */}
-          <button className="px-6 py-3 w-44 text-center rounded-full 
-            bg-white/10 backdrop-blur-lg 
-            border border-white/20
-            text-white text-lg 
-            shadow-lg 
-            hover:bg-white/20 hover:scale-105 
-            transition duration-300">
-            {primaryBtn}
-          </button>
+   {/* PRIMARY BUTTON (SOLID PINK) */}
+  <button className="px-5 py-2 rounded-full text-sm text-white
+  bg-[#ec4899]/80 backdrop-blur-md
+  border border-cyan-300
+  shadow-[0_0_15px_rgba(236,72,153,0.3)]
+  hover:shadow-[0_0_25px_rgba(236,72,153,0.5)]
+  hover:bg-[#ec4899]
+  hover:scale-105 transition duration-300">
+    {primaryBtn}
+  </button>
 
-          {/* SECONDARY BUTTON */}
-          {secondaryBtn && (
-            <button
-              className="px-6 py-3 w-44 text-center rounded-full 
-              bg-gradient-to-r from-[#ffffff] to-[#2BD7D7] 
-              text-black text-lg 
-              hover:scale-105 transition duration-300"
-            >
-              {secondaryBtn}
-            </button>
-          )}
+  {/* SECONDARY BUTTON (Cyan Outline) */}
+  {secondaryBtn && (
+    <button className="px-5 py-3 rounded-full text-sm text-white
+    bg-transparent
+    border border-cyan-300
+    shadow-[0_0_12px_rgba(0,255,255,0.2)]
+    hover:shadow-[0_0_10px_rgba(0,255,255,0.4)]
+    hover:bg-cyan-400/10
+    hover:scale-105 transition duration-300">
+      {secondaryBtn}
+    </button>
+  )}
 
-        </div>
+</div>
 
       </div>
     </div>
