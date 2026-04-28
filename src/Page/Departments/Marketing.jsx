@@ -104,8 +104,8 @@ const Marketing = () => {
         primaryBtn="Explore Marketing Services"
         secondaryBtn="Book a Free Consultation"
       />
-                  {/* ===== STATS ===== */}
-      <div
+        {/* ===== STATS ===== */}
+         <div
     className="bg-[#060B14]  flex flex-wrap justify-center items-center gap-4 text-[24px] md:text-[24px] text-gray-300"
     style={{
       fontFamily: "Merienda One",
@@ -133,7 +133,7 @@ const Marketing = () => {
     Real-World Project Experience
   </div>
 
-</div>
+         </div>
 
 
       {/* 🔥 ABOUT */}

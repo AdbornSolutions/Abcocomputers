@@ -5,6 +5,7 @@ const AboutServiceSection = ({
   heading,
   description1,
   description2,
+  description3,
   buttonText,
   image,
   reverse = false, // 🔥 layout change option
@@ -38,6 +39,24 @@ const AboutServiceSection = ({
           <p className="text-gray-400 text-[14px] md:text-[16px] leading-relaxed">
             {description2}
           </p>
+
+
+          {/* DESCRIPTION 2 */}
+{Array.isArray(description3) ? (
+  <ul className="text-gray-400 text-[14px] md:text-[16px] leading-relaxed space-y-2">
+    {description3.map((point, i) => (
+      <li key={i} className="flex gap-2">
+        <span className="text-[#2BD7D7]">•</span>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+) : (
+  <p className="text-gray-400 text-[14px] md:text-[16px] leading-relaxed">
+    {description3}
+  </p>
+)}
+
 
           {/* BUTTON */}
           <button className="mt-6 px-6 py-2 rounded-full 
