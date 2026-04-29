@@ -72,7 +72,7 @@ const AboutServiceSection = ({
           <img
             src={image}
             alt="service"
-            className="w-full max-w-[420px] md:max-w-[480px] object-contain"
+            className="w-full max-w-[320px] md:max-w-[380px] object-contain"
           />
         </div>
 

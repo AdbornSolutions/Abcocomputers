@@ -19,6 +19,14 @@ import Contracts from "./Page/Departments/Contracts";
 import Immigration from "./Page/Departments/immigrations&legal";
 import Advisory from "./Page/Departments/AdvisoryTeam";
 
+// Service Pages
+import ItCareer from "./Page/Services/ItCareer";
+import ItJobPlacements from "./Page/Services/ItJobPlacements";
+import MasterinUsa from "./Page/Services/MasterinUsa";
+import GreenCard from "./Page/Services/GreenCard";
+import F1visa from "./Page/Services/F1visa";
+import H1Bvisa from "./Page/Services/H1Bvisa";
+
 const App = () => {
   return (
     <Routes>
@@ -39,6 +47,14 @@ const App = () => {
       <Route path="/contracts" element={<Contracts />} />
       <Route path="/immigration" element={<Immigration />} />
       <Route path="/advisory" element={<Advisory />} />
+
+      {/* SERVICES */}
+      <Route path="/it-career" element={<ItCareer />} />
+      <Route path="/it-job-placements" element={<ItJobPlacements />} />
+      <Route path="/masters-in-usa" element={<MasterinUsa />} />
+      <Route path="/green-card" element={<GreenCard />} />
+      <Route path="/f1-visa" element={<F1visa />} />
+      <Route path="/h1b-visa" element={<H1Bvisa />} />
     </Routes>
   );
 };

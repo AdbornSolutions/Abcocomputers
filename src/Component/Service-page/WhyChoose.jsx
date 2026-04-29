@@ -28,7 +28,7 @@ const features = [
 
 const WhyChoose = () => {
   return (
-    <section className="bg-[#071423] text-white py-16 md:py-20 px-6 md:px-12 lg:px-20">
+    <section className="bg-[#060B14] text-white py-16 md:py-20 px-6 md:px-12 lg:px-20">
 
       {/* TAG */}
       <div className="flex justify-center mb-6">
