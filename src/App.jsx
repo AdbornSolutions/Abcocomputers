@@ -26,11 +26,13 @@ import MasterinUsa from "./Page/Services/MasterinUsa";
 import GreenCard from "./Page/Services/GreenCard";
 import F1visa from "./Page/Services/F1visa";
 import H1Bvisa from "./Page/Services/H1Bvisa";
-import MotionProvider from "./Component/MotionProvider";
+import ScrollToTop from "./Component/ScrollToTop";
 
 const App = () => {
   return (
-    <MotionProvider>
+    <>
+      <ScrollToTop />
+
       <Routes>
         {/* MAIN */}
         <Route path="/" element={<Home />} />
@@ -58,7 +60,7 @@ const App = () => {
         <Route path="/f1-visa" element={<F1visa />} />
         <Route path="/h1b-visa" element={<H1Bvisa />} />
       </Routes>
-    </MotionProvider>
+    </>
   );
 };
 

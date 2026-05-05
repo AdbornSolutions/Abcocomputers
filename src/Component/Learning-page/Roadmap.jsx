@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const steps = [
   {
@@ -39,32 +39,13 @@ const steps = [
 ];
 
 export default function Roadmap() {
-  const [visible, setVisible] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
-  const refs = useRef([]);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 600);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
-  }, []);
-
-  useEffect(() => {
-    const observers = refs.current.map((el, i) => {
-      if (!el) return null;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisible((prev) => [...new Set([...prev, i])]);
-          }
-        },
-        { threshold: 0.2 }
-      );
-      obs.observe(el);
-      return obs;
-    });
-    return () => observers.forEach((o) => o && o.disconnect());
   }, []);
 
   return (
@@ -107,18 +88,11 @@ export default function Roadmap() {
         <div className="rm-steps">
           {steps.map((step, i) => {
             const isLeft = step.side === "left";
-            const isVis = visible.includes(i);
 
             return (
               <div
                 key={i}
-                ref={(el) => (refs.current[i] = el)}
                 className={`rm-row${isMobile ? " rm-row--mobile" : ""}`}
-                style={{
-                  opacity: isVis ? 1 : 0,
-                  transform: isVis ? "translateY(0)" : "translateY(22px)",
-                  transition: `opacity 0.55s ease ${i * 0.11}s, transform 0.55s ease ${i * 0.11}s`,
-                }}
               >
                 {!isMobile ? (
                   /* ── DESKTOP LAYOUT ── */
@@ -273,7 +247,6 @@ const globalCSS = `
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 0 7px rgba(255,255,255,0.025);
-    transition: background 0.25s;
   }
   .rm-circle:hover {
     background: rgba(255,255,255,0.12);
