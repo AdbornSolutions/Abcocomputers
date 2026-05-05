@@ -27,36 +27,39 @@ import MasterinUsa from "./Page/Services/MasterinUsa";
 import GreenCard from "./Page/Services/GreenCard";
 import F1visa from "./Page/Services/F1visa";
 import H1Bvisa from "./Page/Services/H1Bvisa";
+import MotionProvider from "./Component/MotionProvider";
 
 const App = () => {
   return (
-    <Routes>
-      {/* MAIN */}
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contactus" element={<Contactus />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/department" element={<Department />} />
-      <Route path="/learning" element={<Learning />} />
+    <MotionProvider>
+      <Routes>
+        {/* MAIN */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contactus" element={<Contactus />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/department" element={<Department />} />
+        <Route path="/learning" element={<Learning />} />
 
-      {/* DEPARTMENTS */}
-      <Route path="/hr-onboarding" element={<HrOnboarding />} />
-      <Route path="/admission" element={<Admission />} />
-      <Route path="/accounts" element={<Accounts />} />
-      <Route path="/training" element={<Training />} />
-      <Route path="/marketing" element={<Marketing />} />
-      <Route path="/contracts" element={<Contracts />} />
-      <Route path="/immigration" element={<Immigration />} />
-      <Route path="/advisory" element={<Advisory />} />
+        {/* DEPARTMENTS */}
+        <Route path="/hr-onboarding" element={<HrOnboarding />} />
+        <Route path="/admission" element={<Admission />} />
+        <Route path="/accounts" element={<Accounts />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/marketing" element={<Marketing />} />
+        <Route path="/contracts" element={<Contracts />} />
+        <Route path="/immigration" element={<Immigration />} />
+        <Route path="/advisory" element={<Advisory />} />
 
-      {/* SERVICES */}
-      <Route path="/it-career" element={<ItCareer />} />
-      <Route path="/it-job-placements" element={<ItJobPlacements />} />
-      <Route path="/masters-in-usa" element={<MasterinUsa />} />
-      <Route path="/green-card" element={<GreenCard />} />
-      <Route path="/f1-visa" element={<F1visa />} />
-      <Route path="/h1b-visa" element={<H1Bvisa />} />
-    </Routes>
+        {/* SERVICES */}
+        <Route path="/it-career" element={<ItCareer />} />
+        <Route path="/it-job-placements" element={<ItJobPlacements />} />
+        <Route path="/masters-in-usa" element={<MasterinUsa />} />
+        <Route path="/green-card" element={<GreenCard />} />
+        <Route path="/f1-visa" element={<F1visa />} />
+        <Route path="/h1b-visa" element={<H1Bvisa />} />
+      </Routes>
+    </MotionProvider>
   );
 };
 

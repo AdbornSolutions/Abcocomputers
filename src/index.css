@@ -97,4 +97,88 @@ p {
   scrollbar-width: none;
 }
 
+@keyframes motion-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes motion-soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.motion-enabled .motion-target {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0) scale(0.98);
+  filter: blur(6px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms ease;
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.motion-enabled .motion-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+.motion-enabled nav,
+.motion-enabled .fixed img,
+.motion-enabled .fixed button {
+  animation: motion-fade-up 650ms ease both;
+}
+
+.motion-enabled section:first-of-type img:not([class*="h-8"]):not([class*="h-10"]) {
+  animation: motion-soft-float 5.5s ease-in-out infinite;
+}
+
+.motion-enabled button,
+.motion-enabled a,
+.motion-enabled .rounded-xl,
+.motion-enabled .rounded-2xl,
+.motion-enabled .rounded-\[16px\],
+.motion-enabled .rounded-\[20px\],
+.motion-enabled .rounded-\[24px\],
+.motion-enabled .rounded-\[30px\] {
+  transition-duration: 260ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-enabled button:hover,
+.motion-enabled a:hover,
+.motion-enabled .rounded-xl:hover,
+.motion-enabled .rounded-2xl:hover,
+.motion-enabled .rounded-\[16px\]:hover,
+.motion-enabled .rounded-\[20px\]:hover,
+.motion-enabled .rounded-\[24px\]:hover,
+.motion-enabled .rounded-\[30px\]:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
