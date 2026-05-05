@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 
 const testimonials = [
   { top: "35%", left: "10%", img: "Ellipse-10-2.png", text: "Highly recommend for gifting", default: true },
-  { top: "55%", left: "45%", img: "Ellipse-15-1.png", text: "Elegant gifts, timely delivery", default: true },
+  { top: "55%", left: "47%", img: "Ellipse-15-1.png", text: "Elegant gifts, timely delivery", default: true },
   { top: "1%", left: "78%", img: "Ellipse-18.png", text: "Made our event memorable", default: true },
   { top: "92%", left: "66%", img: "Ellipse-22.png", text: "Absolutely loved the quality", default: true },
 
-  { top: "12%", left: "62%", img: "Ellipse-17.png", text: "Absolutely loved the quality" },
+  { top: "15%", left: "62%", img: "Ellipse-17.png", text: "Absolutely loved the quality" },
   { top: "70%", left: "95%", img: "Ellipse-20.png", text: "Made our event memorable" },
-  { top: "60%", left: "82%", img: "Ellipse-21.png", text: "Made our event memorable" },
-  { top: "28%", left: "88%", img: "Ellipse-19.png", text: "Made our event memorable" },
+  { top: "65%", left: "82%", img: "Ellipse-21.png", text: "Made our event memorable" },
+  { top: "28%", left: "85%", img: "Ellipse-19.png", text: "Made our event memorable" },
   { top: "90%", left: "35%", img: "Ellipse-14-1.png", text: "Elegant gifts, timely delivery" },
   { top: "10%", left: "42%", img: "Ellipse-16-1.png", text: "Elegant gifts, timely delivery" },
   { top: "68%", left: "-2%", img: "Ellipse-11-1.png", text: "Elegant gifts, timely delivery" },
-  { top: "95%", left: "14%", img: "Ellipse-12-1.png", text: "Elegant gifts, timely delivery" },
+  { top: "91%", left: "14%", img: "Ellipse-12-1.png", text: "Elegant gifts, timely delivery" },
   { top: "55%", left: "22%", img: "Ellipse-13-1.png", text: "Elegant gifts, timely delivery" },
-  { top: "0%", left: "18%", img: "Ellipse-9-1.png", text: "Elegant gifts, timely delivery" },
+  { top: "-10%", left: "18%", img: "Ellipse-9-1.png", text: "Elegant gifts, timely delivery" },
 ];
 
 const ExpertTree = () => {
