@@ -33,7 +33,7 @@ const testimonials = [
 const loopData = [...testimonials, ...testimonials];
 
 const Card = ({ name, location, text }) => (
-  <div className="w-[320px] h-[180px] flex-shrink-0 
+  <div className="w-[270px] sm:w-[320px] min-h-[180px] flex-shrink-0 
     bg-[#0b1220] p-5 rounded-[20px] border border-white/10 mr-6">
 
     <p className="text-gray-300 text-[12px] mb-4">
@@ -72,7 +72,7 @@ const Testimonials = () => {
           </div>
 
           {/* HEADING */}
-          <h2 className="text-[42px] font-medium 
+          <h2 className="text-[26px] sm:text-[34px] md:text-[42px] font-medium leading-tight 
           bg-[linear-gradient(90deg,_#FFFFFF_0.3%,_#2BD7D7_60%)] 
           bg-clip-text text-transparent">
             HERE IS WHAT OUR CLIENTS HAVE TO SAY
@@ -104,11 +104,11 @@ const Testimonials = () => {
         </div>
 
         {/* 🔥 LEFT FADE (FLUID) */}
-        <div className="pointer-events-none absolute top-0 left-0 h-full w-[140px] md:w-[180px] 
+        <div className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-[140px] md:w-[180px] 
         bg-gradient-to-r from-[#060B14] to-transparent z-20"></div>
 
         {/* 🔥 RIGHT FADE (FLUID) */}
-        <div className="pointer-events-none absolute top-0 right-0 h-full w-[140px] md:w-[180px] 
+        <div className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-[140px] md:w-[180px] 
         bg-gradient-to-l from-[#060B14] to-transparent z-20"></div>
 
       </div>

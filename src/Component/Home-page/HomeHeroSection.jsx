@@ -12,7 +12,7 @@ const HomeHeroSection = () => {
     <>
       {/* ================= HERO SECTION ================= */}
       <div
-        className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 text-white relative overflow-hidden"
+        className="w-full min-h-[88vh] md:min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-14 text-white relative overflow-hidden"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
@@ -25,11 +25,11 @@ const HomeHeroSection = () => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
-          <h1 className="font-heading text-[40px] md:text-[48px] leading-tight max-w-3xl">
+          <h1 className="font-heading text-[32px] sm:text-[40px] md:text-[48px] leading-tight max-w-3xl">
             Unlock Your IT Career in the USA with ABCO Computers
           </h1>
 
-          <p className="mt-4 max-w-2xl text-gray-300 text-[18px] leading-relaxed">
+          <p className="mt-4 max-w-2xl text-gray-300 text-[15px] sm:text-[18px] leading-relaxed">
             Tap into our network of employers and land positions that match your
             skills and career goals.
           </p>

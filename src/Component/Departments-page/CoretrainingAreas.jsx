@@ -63,7 +63,7 @@ const CoretrainingAreas = () => {
       </div>
 
       {/* MAIN GRID */}
-      <div className="relative max-w-[1300px] mx-auto">
+      <div className="hidden md:block relative max-w-[1300px] mx-auto">
 
         {/* ===== TOP ROW ===== */}
         <div className="grid md:grid-cols-3 gap-16 items-center">
@@ -75,7 +75,7 @@ const CoretrainingAreas = () => {
         </div>
 
         {/* ARROWS TOP */}
-        <img src={Arrow} className="absolute top-[90px] left-[66%] w-[40px]" />
+        <img src={Arrow} className="hidden md:block absolute top-[90px] left-[66%] w-[40px]" />
 
         {/* DOWN ARROWS */}
         <div className="hidden md:block">
@@ -105,7 +105,7 @@ const CoretrainingAreas = () => {
         {/* ARROWS BOTTOM */}
         <img
           src={Arrow}
-          className="absolute top-[320px] left-[31%] w-[40px] rotate-180"
+          className="hidden md:block absolute top-[320px] left-[31%] w-[40px] rotate-180"
         />
         
 

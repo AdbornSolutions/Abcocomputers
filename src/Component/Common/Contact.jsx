@@ -13,8 +13,8 @@ const Contact = () => {
 
         {/* BUTTON */}
         <div className="mb-6">
-  <button className="px-10 py-3 rounded-full font-heading
-  text-white text-[20px] tracking-wide
+  <button className="px-8 sm:px-10 py-3 rounded-full font-heading
+  text-white text-[17px] sm:text-[20px] tracking-wide
   
   bg-gradient-to-r from-white/10 to-white/5
   backdrop-blur-lg
@@ -53,7 +53,7 @@ w-full sm:w-[460px]
     <input
       type="text"
       placeholder="xxxx-xxx-xxx"
-      className="bg-transparent outline-none text-white text-lg w-full placeholder-gray-400"
+      className="bg-transparent outline-none text-white text-base sm:text-lg w-full min-w-0 placeholder-gray-400"
     />
   </div>
 

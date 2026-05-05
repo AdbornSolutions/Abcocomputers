@@ -16,7 +16,7 @@ const loopImages = [...sliderImages, ...sliderImages , ...sliderImages , ...slid
 
 const Sliders = () => {
   return (
-    <div className="absolute bottom-10 w-full overflow-hidden z-10 mt-4">
+    <div className="relative w-full overflow-hidden z-10 py-6 bg-[#060B14]">
 
       <div className="slider-marquee">
 
@@ -24,7 +24,7 @@ const Sliders = () => {
           <img
             key={i}
             src={img}
-            className="h-10 mx-6 opacity-70 hover:opacity-100 transition duration-300"
+            className="h-8 sm:h-10 mx-4 sm:mx-6 opacity-70 hover:opacity-100 transition duration-300"
             alt="logo"
           />
         ))}

@@ -41,7 +41,7 @@ const OurCommitment = () => {
       <div className="mb-10">
         <p className="text-white text-[16px] sm:text-[34px] mb-2">Our</p>
 
-        <h2 className="text-[40px] sm:text-[56px] md:text-[56px] font-medium leading-tight 
+        <h2 className="text-[32px] sm:text-[48px] md:text-[56px] font-medium leading-tight 
         bg-[linear-gradient(95deg,_#FFFFFF_0.2%,_#2BD7D7_30%)] 
         bg-clip-text text-transparent">
           Commitment to Excellence
@@ -69,11 +69,11 @@ const OurCommitment = () => {
         </div>
 
         {/* ===== TIMELINE ===== */}
-        <div className="relative -mt-10 md:-mt-32">
+        <div className="relative mt-6 md:-mt-32">
 
   {/* CENTER LINE */}
-  <div className="absolute left-1/2 md:left-1/2 left-4 top-0 bottom-0 
-  w-[2px] md:w-[5px] bg-white -translate-x-1/2 md:translate-x-0"></div>
+  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 
+  w-[2px] md:w-[5px] bg-white md:-translate-x-1/2"></div>
 
   {timelineItems.map((item, i) => (
     <div
@@ -89,8 +89,8 @@ const OurCommitment = () => {
 
       {/* DOT */}
       <div className="absolute 
-        left-1/2 md:left-1/2 
-        -translate-x-1/2 md:-translate-x-1/2 
+        left-4 md:left-1/2 
+        -translate-x-1/2 
         w-[12px] h-[12px] md:w-[20px] md:h-[20px] 
         bg-black border-2 md:border-4 rounded-full z-10"
       />

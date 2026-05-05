@@ -82,13 +82,13 @@ const YourGateway = () => {
         <div
           ref={sliderRef}
           className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth scrollbar-hide 
-          px-[60px] md:px-[120px]"
+          px-4 sm:px-8 md:px-[120px] pb-2"
         >
           {gatewayData.map((item, index) => (
             <div
               key={index}
               className="flex-shrink-0 
-              w-[85%] sm:w-[300px] md:w-[380px] lg:w-[401px] 
+              w-[82vw] max-w-[320px] sm:w-[300px] md:w-[380px] md:max-w-none lg:w-[401px] 
               h-auto md:h-[205px]
               bg-[#0b1220] p-4 md:p-5 rounded-[20px] md:rounded-[30px] 
               border border-white/10 flex flex-col justify-between"

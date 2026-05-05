@@ -41,7 +41,7 @@ const ContractManagement = () => {
       </div>
 
       {/* 🔥 FLOW */}
-      <div className="relative max-w-[1200px] mx-auto flex items-center justify-between">
+      <div className="hidden md:flex relative max-w-[1200px] mx-auto items-center justify-between">
 
         {steps.map((step, i) => (
           <div key={i} className="relative flex flex-col items-center text-center w-[160px]">

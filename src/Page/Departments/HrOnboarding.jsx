@@ -101,7 +101,7 @@ const HrOnboarding = () => {
         <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed text-center mt-4">
           Delivering structured processes, compliance precision, and seamless onboarding <br /> experiences with dedicated professional support.
         </p>
-        <img src={heroBg} alt="hero-bg" className="w-[965px] h-[595px] mx-auto mt-12" />
+        <img src={heroBg} alt="hero-bg" className="w-full max-w-[965px] h-auto mx-auto mt-12" />
       </div>
       
       <Ourteam />

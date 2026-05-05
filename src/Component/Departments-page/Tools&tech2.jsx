@@ -30,7 +30,7 @@ const Toolstech2 = () => {
       </div>
 
       {/* 🔥 FLOW */}
-      <div className="relative max-w-[1100px] mx-auto flex items-center justify-between">
+      <div className="hidden md:flex relative max-w-[1100px] mx-auto items-center justify-between">
 
         {/* TOOL 1 */}
         <img src={img1} className="h-[100px] object-contain" />

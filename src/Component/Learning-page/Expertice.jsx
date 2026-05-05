@@ -43,7 +43,7 @@ const Expertise = () => {
   <div className="relative 
   bg-gradient-to-br from-[#0f172a]  to-[#020617]
   border border-white/10 rounded-2xl p-6 
-  flex justify-between items-center overflow-hidden
+  flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 overflow-hidden
   shadow-[0_0_20px_rgba(0,255,255,0.05)]">
 
     {/* LEFT CURVED BORDER */}
@@ -77,7 +77,7 @@ const Expertise = () => {
     <img
       src={strategyImg}
       alt=""
-      className="w-32 h-24 object-cover rounded-xl"
+      className="w-full sm:w-32 h-32 sm:h-24 object-cover rounded-xl"
     />
 
   </div>

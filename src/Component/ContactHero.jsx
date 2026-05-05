@@ -9,7 +9,7 @@ bg-[#060B14] relative text-white overflow-hidden">
       {/* 🔥 TOP GLOW (MAIN ELLIPSE) */}
    {/* CENTER SOFT GLOW */}
 <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 
-w-[700px] h-[700px] rounded-full 
+w-[360px] h-[360px] md:w-[700px] md:h-[700px] rounded-full 
 bg-cyan-400/30 blur-[110px] pointer-events-none"></div>
       {/* TOP CONTENT */}
       <div className="text-center max-w-3xl mx-auto mb-14">
@@ -125,7 +125,7 @@ bg-cyan-400/30 blur-[110px] pointer-events-none"></div>
 
             <div className="flex items-center gap-3">
               <Mail size={16} />
-              <span>hr-manager@abcocomputers.com</span>
+              <span className="break-all">hr-manager@abcocomputers.com</span>
             </div>
 
             <div className="flex items-start gap-3">

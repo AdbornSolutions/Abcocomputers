@@ -8,16 +8,16 @@ const HomeSection = ({
   secondaryBtn,
 }) => {
   return (
-    <div className="w-full min-h-[110vh] flex flex-col items-center justify-center text-center px-4 text-white relative overflow-hidden bg-[#060B14]">
+    <div className="w-full min-h-[86vh] md:min-h-[110vh] flex flex-col items-center justify-center text-center px-4 pt-24 pb-14 text-white relative overflow-hidden bg-[#060B14]">
 
       {/* 🔥 TOP GLOW (MAIN ELLIPSE) */}
       <div className="absolute top-[-300px] left-1/2 -translate-x-1/2 
-      w-[900px] h-[800px] rounded-full 
+      w-[520px] h-[520px] md:w-[900px] md:h-[800px] rounded-full 
       bg-[#2BD7D7] opacity-100 blur-[100px]"></div>
 
       {/* 🔥 SECOND SOFT GLOW */}
       <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 
-      w-[500px] h-[500px] rounded-full 
+      w-[320px] h-[320px] md:w-[500px] md:h-[500px] rounded-full 
       bg-[#2BD7D7] opacity-30 blur-[200px]"></div>
 
       {/* 🔥 DARK OVERLAY FOR DEPTH */}

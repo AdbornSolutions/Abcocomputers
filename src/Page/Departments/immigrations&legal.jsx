@@ -106,11 +106,11 @@ const ImmigrationsAndLegal = () => {
       />
        {/* ===== STATS ===== */}
          <div
-    className="bg-[#060B14]  flex flex-wrap justify-center items-center gap-4 text-[24px] md:text-[24px] text-gray-300"
+    className="bg-[#060B14] flex flex-wrap justify-center items-center gap-3 sm:gap-4 px-4 text-center text-[14px] sm:text-[18px] md:text-[24px] text-gray-300"
     style={{
       fontFamily: "Merienda One",
       fontWeight: 400,
-      fontSize: "24px",
+      fontSize: "clamp(14px, 4vw, 24px)",
       lineHeight: "100%",
       letterSpacing: "0%",
     }}

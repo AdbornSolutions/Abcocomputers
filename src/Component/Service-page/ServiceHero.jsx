@@ -4,7 +4,7 @@ import Counter from "../../Component/Common/Counter";
 
 const ServiceHero = () => {
   return (
-    <section className="w-full min-h-screen bg-[#060B14] text-white flex items-center px-4 md:px-10 lg:px-20 relative overflow-hidden">
+    <section className="w-full min-h-screen bg-[#060B14] text-white flex items-center px-4 md:px-10 lg:px-20 pt-24 pb-40 md:py-24 relative overflow-hidden">
 
       {/* 🔵 CYAN GLOW */}
 
@@ -83,14 +83,14 @@ If you want it more enterprise-focused, startup-friendly, or USA-market oriented
 
 
 {/* ===== BOTTOM STATS ===== */}
-<div className="absolute bottom-6 left-0 w-full flex justify-center z-10">
+<div className="absolute bottom-6 left-0 w-full flex justify-center z-10 px-4">
 
   <div
-    className="flex gap-6 sm:gap-10 md:gap-16 text-white"
+    className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-16 text-white text-center"
     style={{
       fontFamily: "Merienda One",
       fontWeight: 400,
-      fontSize: "30px",
+      fontSize: "clamp(13px, 3.6vw, 30px)",
       lineHeight: "100%",
       letterSpacing: "0%",
     }}
@@ -100,13 +100,13 @@ If you want it more enterprise-focused, startup-friendly, or USA-market oriented
       <Counter end={380} /> User Active
     </span>
 
-    <span>|</span>
+    <span className="hidden sm:inline">|</span>
 
     <span className="flex items-center gap-1">
       <Counter end={230} /> Trusted By Company
     </span>
 
-    <span>|</span>
+    <span className="hidden sm:inline">|</span>
 
     <span className="flex items-center gap-1">
       <Counter end={500} /> Reviews

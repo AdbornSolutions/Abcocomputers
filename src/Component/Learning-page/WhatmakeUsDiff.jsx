@@ -46,7 +46,7 @@ const WhatmakesUsDiff = () => {
       </p>
 
       {/* STATS BOX */}
-      <div className="relative bg-[#0b1d2e] rounded-2xl p-6 w-[240px] overflow-hidden">
+      <div className="relative bg-[#0b1d2e] rounded-2xl p-6 w-full max-w-[240px] overflow-hidden">
 
         {/* TOP CURVED BORDER */}
         <div className="absolute top-0 left-0 w-full h-6 pointer-events-none">
@@ -71,7 +71,7 @@ const WhatmakesUsDiff = () => {
             bg-[#0b1d2e] rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02]
 
             ${index === 0 || index === 2 ? "min-h-[260px]" : "min-h-[200px]"}
-            ${index === 1 || index === 3 ? "mt-8" : ""}
+            ${index === 1 || index === 3 ? "sm:mt-8" : ""}
           `}
         >
           
