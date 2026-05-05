@@ -9,7 +9,6 @@ import FAQ from "../../Component/Common/FAQ";
 // 🔥 COMPONENTS
 import DepartmentHero from "../../Component/Departments-page/DHeroSec";
 import AboutServiceSection from "../../Component/Departments-page/AboutthisService";
-import ProcessFlow from "../../Component/Departments-page/ProcessFlow";
 import TrainingMethodTemplate from "../../Component/Departments-page/OurTrainingMethod";
 import WhyChooseTemplate from "../../Component/Departments-page/WhyChooseOurAT";
 import Counter from "../../Component/Common/Counter";

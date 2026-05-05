@@ -14,7 +14,6 @@ import TimelineTemplate from "../../Component/Departments-page/OurOnboarding";
 
 // 🔥 IMAGE
 import advisoryImg from "../../assets/DepartmentPage/aboutthis6.png";
-import serviceImg from "../../assets/DepartmentPage/aboutservice2.png";
 import serviceImg2 from "../../assets/DepartmentPage/accout-timeline.png";
 import OurTeam from "../../Component/Common/Ourteam";
 import Testimonials from "../../Component/Common/Testimonials";
@@ -30,15 +29,6 @@ const advisorySteps = [
 ];
 
 // 🔥 PROCESS STEPS
-const advisoryProcess = [
-  { id: "01", title: "Initial Consultation" },
-  { id: "02", title: "Requirement Analysis" },
-  { id: "03", title: "Strategy Development" },
-  { id: "04", title: "Implementation Support" },
-  { id: "05", title: "Performance Review" },
-  { id: "06", title: "Growth Optimization" },
-];
-
 // 🔥 WHY CHOOSE
 const whyData = [
   {
