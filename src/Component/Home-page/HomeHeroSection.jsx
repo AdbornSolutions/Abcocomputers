@@ -6,6 +6,7 @@ import heroBg from "../../assets/home-page/home-bg.png";
 // IMPORT COMPONENTS
 import Sliders from "../Common/Sliders";
 import CareerinUsa from "./CareerinUsa";
+import DarkVeil from "./DarkVeil"; // Ensure this path matches your file structure
 
 const HomeHeroSection = () => {
   return (
@@ -20,8 +21,20 @@ const HomeHeroSection = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[##060B14]/70"></div>
+        {/* ANIMATED WEBGL BACKGROUND */}
+        <div className="absolute inset-0 z-0 opacity-100">
+          <DarkVeil
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={1}
+            scanlineFrequency={0}
+            warpAmount={0}
+          />
+        </div>
+
+        {/* Overlay (Fixed double hash typo) */}
+        <div className="absolute inset-0 bg-[#060B14]/70 z-0"></div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
@@ -50,17 +63,17 @@ const HomeHeroSection = () => {
           </div>
         </div>
 
-       
-
         {/* GRADIENT */}
         <div className="absolute bottom-0 left-0 w-full h-40 flex-1
           bg-gradient-to-b from-transparent via-[#060B14]/90 to-[#060B14] z-10">
         </div>
       </div>
-        {/* SLIDER COMPONENT */}
-        <Sliders />
-        {/* CAREER SECTION */}
-        <CareerinUsa />
+      
+      {/* SLIDER COMPONENT */}
+      <Sliders />
+      
+      {/* CAREER SECTION */}
+      <CareerinUsa />
     </>
   );
 };
