@@ -20,9 +20,7 @@ const Learning = () => {
             <span className="text-cyan-400">ABCO Computers</span>
           </>
         }
-        description="Education is the foundation of your global success. Start your journey
-         with expert guidance, high-tech training, and a future-ready
-          curriculum."
+        description="Build your global career with expert admission guidance, exam preparation, visa support, and career-focused learning designed for your future success."
         primaryBtn="Start Your Journey"
         secondaryBtn="Book Free Consultation"
      

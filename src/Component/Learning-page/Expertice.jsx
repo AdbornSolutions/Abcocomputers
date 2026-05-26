@@ -29,9 +29,7 @@ const Expertise = () => {
                     </div>
 
                     <div className="text-white/70 text-m flex items-center">
-                        We don't just process applications; we build careers. Our
-                        specialized support covers every touchpoint of your American
-                        education journey.
+                        We do more than guide applications; we shape strong academic journeys. Our student-focused support covers every step of your USA education pathway.
                     </div>
 
                 </div>
@@ -65,8 +63,7 @@ const Expertise = () => {
       </h3>
 
       <p className="text-white/60 text-sm mb-3 max-w-xs">
-        Beyond just picking a name, we analyze market trends and
-        your aptitude to select programs where you will thrive professionally.
+        Go beyond basic counseling with a clear university roadmap based on your profile, goals, budget, and future career plans.
       </p>
 
       <span className="text-cyan-400 text-sm cursor-pointer">
@@ -102,7 +99,7 @@ const Expertise = () => {
     </h3>
 
     <p className="text-white/60 text-sm">
-      Expert guidance for SOPs and LORs that capture your unique story.
+      Build a strong SOP, resume, and application story that highlights your goals.
     </p>
 
   </div>
@@ -117,17 +114,17 @@ const Expertise = () => {
     {
       icon: Briefcase,
       title: "Visa Precision",
-      desc: "Strategic mock interviews for a 95% first-time success rate.",
+      desc: "Get clear document support, visa guidance, and interview preparation.",
     },
     {
       icon: CreditCard,
       title: "Scholarship Hunting",
-      desc: "We find the funding so you can focus on your studies.",
+      desc: "Explore suitable scholarships and funding options for your study journey.",
     },
     {
       icon: Plane,
       title: "Arrival Support",
-      desc: "Pre-departure and cultural integration briefings.",
+      desc: "Receive travel, accommodation, and pre-departure guidance for abroad study.",
     },
   ].map((item, i) => (
     <div

@@ -19,7 +19,7 @@ const About = () => {
       {/* HERO */}
       <HeroSection
         heading="Welcome to ABCO Computers - IT Services And Solutions"
-        description="ABCO Computers is a trusted IT solutions provider empowering individuals and businesses through innovative technology, expert professionals, personalized guidance, and continuous commitment to excellence and industry advancements."
+        description="ABCO Computers is a trusted IT solutions provider helping individuals and businesses grow through innovative technology, expert career guidance, professional IT services, and continuous support to achieve digital success."
         primaryBtn="Explore Now"
       />
 

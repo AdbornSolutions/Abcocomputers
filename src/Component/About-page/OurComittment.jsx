@@ -5,32 +5,32 @@ const OurCommitment = () => {
     {
       side: "right",
       title: "Choose ABCO Computers",
-      text: "Our vast network of highly skilled IT professionals enables us to connect you with the best talent in the industry. We carefully screen and evaluate candidates to ensure they possess the skills, qualifications, and cultural fit that align with your organization."
+      text: "Choose ABCO Computers for trusted IT consulting, career guidance, staffing solutions, and technology support. We combine industry expertise, personalized service, and a result-driven approach to help clients and candidates achieve success."
     },
     {
       side: "left",
-      title: "Our Expertise",
-      text: "At ABCO Computers, we believe in a collaborative approach. By working closely with our clients, we gain a deep understanding of their unique needs and objectives. Our insightful industry knowledge and expertise enable us to deliver tailored staffing solutions that drive real results. Trust us to be your strategic partner in IT staffing."
+      title: "Our Approach",
+      text: "At ABCO Computers, our approach is focused on understanding each client’s goals and every candidate’s career needs. We deliver practical IT solutions, career guidance, staffing support, and technology services that create long-term value and measurable growth."
     },
     {
       side: "right",
       title: "Our Team",
-      text: "Our team at ABCO Computers is made up of passionate and experienced professionals who are dedicated to your success. We go above and beyond to connect you with the best IT talent and provide exceptional service at every step. Let our commitment and expertise propel your business forward."
+      text: "Our team includes experienced IT consultants, recruiters, mentors, and technology professionals who work together to deliver smart solutions, reliable support, and career-focused services for individuals and businesses."
     },
     {
       side: "left",
       title: "Talent Connectors",
-      text : "Building Bridges Between IT Talent and Opportunities At ABCO Computers, we are talent connectors, specializing in matching exceptional IT professionals with the right opportunities. With our extensive network and expertise, we create meaningful connections that drive success for both candidates and organizations."
+      text : "Building strong connections is at the heart of our work. ABCO Computers connects skilled IT professionals with the right career opportunities while helping companies find qualified, job-ready technology talent for their business needs."
     },
     {
       side: "right",
       title: "Beyond Staffing",
-      text: "Delivering Comprehensive IT Solutions ABCO Computers goes beyond staffing. We offer comprehensive IT solutions to meet your evolving needs. From project-based staffing to managed services, we provide end-to-end solutions that optimize your IT capabilities and drive sustainable growth."
+      text: "Beyond traditional staffing, ABCO Computers offers complete technology and career solutions, including IT consulting, software support, training guidance, visa process support, and USA job placement assistance."
     },
     {
       side: "left",
       title: "Agile Workforce Solutions",
-      text: "Adapting to Your Dynamic IT Staffing Needs In today’s rapidly changing IT landscape, agility is key. ABCO Computers provides flexible and scalable workforce solutions that adapt to your evolving staffing needs. Whether you require short-term contractors or long-term placements, we have you covered. Our expertise ensures that you always have the right talent at the right time, driving your business forward."
+      text: "ABCO Computers provides flexible workforce solutions that help businesses hire skilled professionals for project-based, contract, and long-term roles. Our agile staffing approach supports faster hiring, better productivity, and smooth business operations."
     },
   ];
   return (

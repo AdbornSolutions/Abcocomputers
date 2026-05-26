@@ -43,18 +43,18 @@ const OurPurpose = () => {
           <ul className="space-y-3 text-gray-400 text-[12px] sm:text-[13px] leading-relaxed">
 
             <li>
-              <span className="text-white font-semibold">• Integrity:</span>{" "}
-              We uphold the highest standards of honesty and transparency in all our interactions.
+              <span className="text-white font-semibold">• Highly Supportive :</span>{" "}
+             We support every candidate and client with proper guidance, transparent communication, and professional service.
             </li>
 
             <li>
-              <span className="text-white font-semibold">• Collaboration:</span>{" "}
-              We believe in teamwork and innovative solutions through collaboration.
+              <span className="text-white font-semibold">• Collaborative :</span>{" "}
+              We believe in teamwork and strong relationships. Our team works closely with clients and candidates to understand their goals and provide the right solutions
             </li>
 
             <li>
-              <span className="text-white font-semibold">• Respect:</span>{" "}
-              We value every individual and maintain mutual respect in all relationships.
+              <span className="text-white font-semibold">• Business Focused :</span>{" "}
+              We respect every business requirement and deliver practical IT and staffing solutions that support productivity, performance, and long-term growth.
             </li>
 
           </ul>
@@ -76,8 +76,7 @@ const OurPurpose = () => {
             </div>
 
             <p className="text-gray-400 text-[12px] sm:text-[13px] leading-relaxed">
-              At ABCO Computers, our vision is to create a harmonious synergy between talent and opportunity.
-              We envision a landscape where every individual finds their true calling.
+              Our vision is to become a trusted global IT solutions and consulting partner known for innovation, quality services, career development, and customer satisfaction. We aim to help individuals and businesses achieve success through technology and talent.
             </p>
 
           </div>
@@ -95,8 +94,7 @@ const OurPurpose = () => {
             </div>
 
             <p className="text-gray-400 text-[12px] sm:text-[13px] leading-relaxed">
-              Our mission empowers careers and strengthens businesses by fostering growth, aligning talent,
-              and driving innovation with long-term success.
+              Our mission is to provide reliable IT solutions, career guidance, staffing services, and learning support that help businesses grow and professionals build successful careers in the USA IT industry.
             </p>
 
           </div>

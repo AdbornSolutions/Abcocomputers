@@ -27,11 +27,8 @@ const CareerinUsa = () => {
           </h2>
 
           <p className="text-gray-300 text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed mt-6 mb-8">
-            ABCO Computers is thrilled to present an extraordinary career
-            opportunity in the United States, offering a fully funded master’s
-            program for aspiring professionals. Imagine pursuing your higher
-            education without worrying about financial constraints. With ABCO
-            Computers, this dream can become a reality.
+            ABCO Computers is a global IT solutions and consulting company helping students, graduates, and professionals build successful careers in the USA IT industry. We provide career-focused IT training, expert mentorship, visa guidance, placement support, and technology consulting services to help candidates move ahead with confidence.
+From skill development to job preparation, our team supports you at every step of your IT career journey. Whether you want to start your career, upgrade your technical skills, or explore better opportunities in the USA, ABCO Computers is here to guide you.
           </p>
 
           <button className="px-6 py-3 rounded-full bg-[#101826] text-white hover:bg-white/20 transition">

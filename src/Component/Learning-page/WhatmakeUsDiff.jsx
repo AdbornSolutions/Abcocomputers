@@ -9,22 +9,22 @@ const features = [
   {
     icon: icon1,
     title: "Certified Elite Trainers",
-    desc: "Not just teachers, but examiners and industry veterans with 15+ years of pedagogical expertise.",
+    desc: "Learn from experienced trainers, counselors, and industry mentors with strong exam and admission expertise.",
   },
   {
     icon:icon2,
     title: "AI-Powered Mock Tests",
-    desc: "Real-time analysis of your speech and writing using proprietary AI tools to predict your final score accurately.",
+    desc: "Practice with smart mock tests, performance analysis, and feedback to improve your final score accuracy.",
   },
   {
     icon:icon3,
     title: "Cognitive Strategies",
-    desc: "Learn the psychological hacks to stay calm and manage time effectively under high-pressure exam conditions.",
+    desc: "Build focus, time management, confidence, and exam techniques for high-pressure test conditions.",
   },
   {
     icon: icon4,
     title: "Global Alumni Hub",
-    desc: "Access to a private network of students currently studying or working abroad for peer-to-peer guidance.",
+    desc: "Connect with students and professionals studying or working abroad for peer guidance and real insights. ",
   },
 ];
 
@@ -42,7 +42,7 @@ const WhatmakesUsDiff = () => {
       </h2>
 
       <p className="text-gray-400 max-w-md mb-8 text-sm md:text-base">
-        Beyond standard textbooks, we provide an ecosystem designed for high-performance learning.
+       Beyond standard coaching, we provide a complete learning ecosystem designed for high-performance global success.
       </p>
 
       {/* STATS BOX */}

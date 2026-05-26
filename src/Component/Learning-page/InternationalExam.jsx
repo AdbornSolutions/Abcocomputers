@@ -12,37 +12,37 @@ const examData = [
   {
     title: "IELTS",
     tag: "IMMIGRATION",
-    desc: "International English Language Testing System recognized for migration and study in USA.",
+    desc: "International English language testing support for study visas, university admission, and migration goals.",
     img: ieltsImg,
   },
   {
     title: "TOEFL",
     tag: "ADMISSIONS",
-    desc: "Standardized test of English as a Foreign Language for university admissions across North America and Europe.",
+    desc: "Standardized English test preparation for students applying to universities in the USA and other countries.",
     img: toeflImg,
   },
   {
     title: "PTE Academic",
     tag: "VISA READY",
-    desc: "Pearson Test of English Academic for study abroad and visa applications with fast, AI-based results.",
+    desc: "Computer-based English test training for academic admissions, visa applications, and global study plans.",
     img: pteImg,
   },
   {
     title: "GRE",
     tag: "GRADUATE",
-    desc: "Graduate Record Examinations for diverse graduate school programs and merit-based scholarship opportunities.",
+    desc: "Graduate-level exam preparation for master’s programs, scholarships, and competitive university admissions.",
     img: greImg,
   },
   {
     title: "GMAT",
     tag: "BUSINESS",
-    desc: "Graduate Management Admission Test for top-tier global business school success and MBA placements.",
+    desc: "Management admission test preparation for MBA and business school applications worldwide.",
     img: gmatImg,
   },
   {
     title: "Spoken English",
     tag: "FLUENCY",
-    desc: "Master communication, pronunciation, and fluency for professional growth and international confidence.",
+    desc: "Improve fluency, pronunciation, confidence, and communication skills for interviews and academic success.",
     img: spokenImg,
   },
 ];
@@ -57,7 +57,7 @@ const InternationalExam = () => {
           International Exam Categories
         </h2>
         <p className="text-gray-400 max-w-xl text-sm md:text-base">
-          Choose your path to global opportunities with our specialized curriculum for world-renowned certifications.
+          Choose your path to global opportunities with specialized preparation for leading international exams.
         </p>
       </div>
 

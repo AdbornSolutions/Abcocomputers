@@ -5,35 +5,35 @@ const steps = [
     number: "01",
     title: "Profile Evaluation",
     description:
-      "A deep dive into your academic history and future goals to build a winning strategy.",
+      "We study your academic history, goals, skills, and budget to create a smart admission strategy.",
     side: "left",
   },
   {
     number: "02",
     title: "Strategic Application",
     description:
-      "Crafting compelling narratives and ensuring flawless document submissions.",
+      "We prepare strong applications, refine documents, and ensure timely university submissions",
     side: "right",
   },
   {
     number: "03",
     title: "Offer Acceptance",
     description:
-      "Securing your I-20 and managing official communication with your chosen university.",
+      "We help you review admission offers, confirm your university, and complete official communication.",
     side: "left",
   },
   {
     number: "04",
     title: "Visa & Finance",
     description:
-      "Finalizing financial statements and mastering the visa interview process.",
+      "We guide you with financial documents, visa forms, SEVIS, and student visa interview preparation.",
     side: "right",
   },
   {
     number: "05",
     title: "Global Take-Off",
     description:
-      "Pre-departure briefings and joining our exclusive alumni network in the USA.",
+      "We support you with pre-departure briefing, travel guidance, and early settlement preparation.",
     side: "left",
   },
 ];
