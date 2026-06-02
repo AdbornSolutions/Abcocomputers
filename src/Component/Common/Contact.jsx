@@ -46,13 +46,11 @@ w-full sm:w-[460px]
 
 
 ">
-    <span className="text-gray-400 mr-2 text-sm">
-      +91 -
-    </span>
+    
 
     <input
       type="text"
-      placeholder="xxxx-xxx-xxx"
+      placeholder="+91 - xxxx-xxx-xxx"
       className="bg-transparent outline-none text-white text-base sm:text-lg w-full min-w-0 placeholder-gray-400"
     />
   </div>

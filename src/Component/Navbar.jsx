@@ -38,13 +38,14 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <button
+          <Link
+            to="/contactus"
             className="px-5 xl:px-6 py-3 rounded-full
             bg-white/10 backdrop-blur-md border border-white/20
             text-white hover:bg-white/20 transition whitespace-nowrap"
           >
             Book a call
-          </button>
+          </Link>
         </div>
 
         <button
@@ -69,12 +70,14 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <button
+          <Link
+            to="/contactus"
+            onClick={() => setMenuOpen(false)}
             className="mt-2 px-6 py-3 rounded-full
             bg-white text-black hover:bg-white/80 transition"
           >
             Book a call
-          </button>
+          </Link>
         </div>
       )}
     </div>

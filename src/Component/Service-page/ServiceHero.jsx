@@ -62,7 +62,7 @@ const ServiceHero = () => {
               `,
             }}
           >
-            Explore Our Department
+            Explore Our Services
           </button>
 
         </div>

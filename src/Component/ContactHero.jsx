@@ -82,7 +82,7 @@ bg-cyan-400/30 blur-[110px] pointer-events-none"></div>
             },
             {
               title: "India Office (Nagpur)",
-              desc: "IT Park, South Wing, Nagpur, Maharashtra 440022",
+              desc: "Plot No. 47, 3rd Floor, Kotwal Nagar, Khamla, Laxmi Nagar , Nagpur, Maharashtra, India, 440022",
             },
             {
               title: "India Office (Nizamabad)",
@@ -120,7 +120,8 @@ bg-cyan-400/30 blur-[110px] pointer-events-none"></div>
 
             <div className="flex items-center gap-3">
               <Phone size={16} />
-              <span>+1 (555) 012-3456</span>
+              <span>+1 870 2102450 , </span>
+              <span>+91 9000000000 </span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -131,9 +132,7 @@ bg-cyan-400/30 blur-[110px] pointer-events-none"></div>
             <div className="flex items-start gap-3">
               <MapPin size={16} className="mt-1" />
               <span>
-                ABCO Computers Pvt. Ltd. <br />
-                Plot No.47, 3rd Floor, Katol Road, Khamla Nagpur,
-                Maharashtra, 440023 India.
+                Plot No. 47, 3rd Floor, Kotwal Nagar, Khamla, Laxmi Nagar , Nagpur, Maharashtra, India, 440022
               </span>
             </div>
 

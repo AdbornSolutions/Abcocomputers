@@ -1,143 +1,164 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
-  {
-    number: "01",
-    title: "Profile Evaluation",
-    description:
-      "We study your academic history, goals, skills, and budget to create a smart admission strategy.",
-    side: "left",
-  },
-  {
-    number: "02",
-    title: "Strategic Application",
-    description:
-      "We prepare strong applications, refine documents, and ensure timely university submissions",
-    side: "right",
-  },
-  {
-    number: "03",
-    title: "Offer Acceptance",
-    description:
-      "We help you review admission offers, confirm your university, and complete official communication.",
-    side: "left",
-  },
-  {
-    number: "04",
-    title: "Visa & Finance",
-    description:
-      "We guide you with financial documents, visa forms, SEVIS, and student visa interview preparation.",
-    side: "right",
-  },
-  {
-    number: "05",
-    title: "Global Take-Off",
-    description:
-      "We support you with pre-departure briefing, travel guidance, and early settlement preparation.",
-    side: "left",
-  },
+  { number: "01", title: "Profile Evaluation", description: "We study your academic history, goals, skills, and budget to create a smart admission strategy.", side: "left" },
+  { number: "02", title: "Strategic Application", description: "We prepare strong applications, refine documents, and ensure timely university submissions.", side: "right" },
+  { number: "03", title: "Offer Acceptance", description: "We help you review admission offers, confirm your university, and complete official communication.", side: "left" },
+  { number: "04", title: "Visa & Finance", description: "We guide you with financial documents, visa forms, SEVIS, and student visa interview preparation.", side: "right" },
+  { number: "05", title: "Global Take-Off", description: "We support you with pre-departure briefing, travel guidance, and early settlement preparation.", side: "left" },
 ];
 
 export default function Roadmap() {
-  const [isMobile, setIsMobile] = useState(false);
+  const bodyRef      = useRef(null);
+  const svgRef       = useRef(null);
+  const progressRef  = useRef(null);
+  const circleRefs   = useRef([]);
+  const rowRefs      = useRef([]);
+  const [active, setActive]     = useState([]);
+  const [visible, setVisible]   = useState([]);
+  const [pathData, setPathData] = useState("");
+  const [total, setTotal]       = useState(0);
+  const [offset, setOffset]     = useState(9999);
+
+  function buildSnake() {
+    const body = bodyRef.current;
+    if (!body) return;
+    const bRect = body.getBoundingClientRect();
+    const pts = circleRefs.current.map((el) => {
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return { x: r.left - bRect.left + r.width / 2, y: r.top - bRect.top + r.height / 2 };
+    }).filter(Boolean);
+    if (pts.length < 2) return;
+    let d = `M${pts[0].x},${pts[0].y}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+      const p = pts[i], n = pts[i + 1];
+      const mid = (p.y + n.y) / 2;
+      d += ` C${p.x},${mid} ${n.x},${mid} ${n.x},${n.y}`;
+    }
+    setPathData(d);
+    requestAnimationFrame(() => {
+      if (progressRef.current) {
+        const len = progressRef.current.getTotalLength();
+        setTotal(len);
+        setOffset(len);
+      }
+    });
+  }
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 600);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    setTimeout(buildSnake, 100);
+    window.addEventListener("resize", buildSnake);
+    return () => window.removeEventListener("resize", buildSnake);
   }, []);
 
-  return (
-    <div className="rm-page ">
-      <style>{globalCSS}</style>
+  useEffect(() => {
+    if (!total) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const idx = rowRefs.current.indexOf(entry.target);
+        if (idx < 0) return;
+        setActive((p) => [...new Set([...p, idx])]);
+        setVisible((p) => [...new Set([...p, idx])]);
+        const progress = (idx + 1) / steps.length;
+        setOffset(total * (1 - progress));
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+    rowRefs.current.forEach((r) => r && obs.observe(r));
+    return () => obs.disconnect();
+  }, [total]);
 
-      {/* Header */}
-      <div className="rm-header">
-        <h1 className="rm-title">Your Roadmap to America</h1>
-        <p className="rm-subtitle">
-          A streamlined, five-step execution plan from evaluation to enrollment.
+  return (
+    <div className="bg-[#0a0a0a] py-14 px-6 rounded-xl">
+      <div className="text-center mb-12">
+        <h2 className="font-garamond text-3xl lg:text-4xl text-white mb-2">Your Roadmap to America</h2>
+        <p className="font-outfit text-xs tracking-widest text-white/35 uppercase">
+          A five-step execution plan from evaluation to enrollment.
         </p>
       </div>
 
-      {/* Timeline */}
-      <div className="rm-timeline">
-        {/* SVG snake curve — desktop only */}
-        {!isMobile && (
-          <svg
-            className="rm-svg"
-            viewBox="0 0 300 850"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M150,10 
-                 C240,10 240,195 150,195 
-                 C60,195 60,375 150,375 
-                 C240,375 240,555 150,555 
-                 C60,555 60,735 150,735 
-                 C240,735 240,840 150,840"
-              fill="none"
-              stroke="rgb(250, 250, 250)"
-              strokeWidth="1.2"
-            />
-          </svg>
-        )}
+      <div className="relative max-w-2xl mx-auto" ref={bodyRef}>
+        {/* SVG snake */}
+        <svg
+          ref={svgRef}
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{ height: "100%" }}
+        >
+          <path d={pathData} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
+          <path
+            ref={progressRef}
+            d={pathData}
+            fill="none"
+            stroke="#c4b5fd"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeDasharray={total || 9999}
+            strokeDashoffset={offset}
+            opacity="0.7"
+            style={{ transition: "stroke-dashoffset 0.6s ease" }}
+          />
+        </svg>
 
         {/* Steps */}
-        <div className="rm-steps">
+        <div className="relative z-10 flex flex-col">
           {steps.map((step, i) => {
             const isLeft = step.side === "left";
-
+            const isActive = active.includes(i);
+            const isVis = visible.includes(i);
             return (
               <div
                 key={i}
-                className={`rm-row${isMobile ? " rm-row--mobile" : ""}`}
+                ref={(el) => (rowRefs.current[i] = el)}
+                className={`flex items-center min-h-[160px] px-4 ${!isLeft ? "flex-row-reverse" : ""}`}
               >
-                {!isMobile ? (
-                  /* ── DESKTOP LAYOUT ── */
-                  <>
-                    {/* Left text column */}
-                    <div className={`rm-text${isLeft ? " rm-text--align-right" : ""}`}>
-                      {isLeft && (
-                        <>
-                          <h3 className="rm-step-title">{step.title}</h3>
-                          <p className="rm-step-desc">{step.description}</p>
-                        </>
-                      )}
-                    </div>
+                {/* Text side */}
+                <div className={`flex-1 max-w-[220px] px-4 ${isLeft ? "text-right" : "text-left"}`}>
+                  <h3
+                    className="font-garamond text-xl text-white/90 mb-1.5"
+                    style={{
+                      opacity: isVis ? 1 : 0,
+                      transform: isVis ? "translateY(0)" : "translateY(12px)",
+                      transition: "opacity 0.5s, transform 0.5s",
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="font-outfit text-[12px] text-white leading-relaxed"
+                    style={{
+                      opacity: isVis ? 1 : 0,
+                      transform: isVis ? "translateY(0)" : "translateY(8px)",
+                      transition: "opacity 0.5s 0.08s, transform 0.5s 0.08s",
+                    }}
+                  >
+                    {step.description}
+                  </p>
+                </div>
 
-                    {/* Circle */}
-                    <div className="rm-circle-col">
-                      <div className="rm-circle">
-                        <span className="rm-num">{step.number}</span>
-                      </div>
-                    </div>
+                {/* Circle */}
+                <div className="w-20 flex-shrink-0 flex justify-center items-center">
+                  <div
+                    ref={(el) => (circleRefs.current[i] = el)}
+                    className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isActive
+                        ? "bg-black border-[1.5px] border-[#c4b5fd] shadow-[0_0_0_8px_rgba(196,181,253,0.06)]"
+                        : "bg-white/5 border-[1.5px] border-white/18 shadow-[0_0_0_8px_rgba(255,255,255,0.03)]"
+                    }`}
+                  >
+                    <span
+                      className={`font-outfit text-[13px] font-medium tracking-wider transition-colors duration-300 ${
+                        isActive ? "text-[#c4b5fd]" : "text-white"
+                      }`}
+                    >
+                      {step.number}
+                    </span>
+                  </div>
+                </div>
 
-                    {/* Right text column */}
-                    <div className={`rm-text${!isLeft ? " rm-text--align-left" : ""}`}>
-                      {!isLeft && (
-                        <>
-                          <h3 className="rm-step-title">{step.title}</h3>
-                          <p className="rm-step-desc">{step.description}</p>
-                        </>
-                      )}
-                    </div>
-                  </>
-                ) : (
-                  /* ── MOBILE LAYOUT ── */
-                  <>
-                    <div className="rm-circle-col">
-                      <div className="rm-circle">
-                        <span className="rm-num">{step.number}</span>
-                      </div>
-                    </div>
-                    <div className="rm-text rm-text--align-left rm-text--mobile">
-                      <h3 className="rm-step-title">{step.title}</h3>
-                      <p className="rm-step-desc">{step.description}</p>
-                    </div>
-                  </>
-                )}
+                {/* Empty spacer */}
+                <div className="flex-1 max-w-[220px] hidden sm:block" />
               </div>
             );
           })}
@@ -146,184 +167,3 @@ export default function Roadmap() {
     </div>
   );
 }
-
-const globalCSS = `
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  .rm-page {
-    
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 64px 20px 80px;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    color: #fff;
-  }
-.rm-row:nth-child(4) {
-  align-items: flex-end;
-  padding-bottom: 20px;  /* ← adjust as needed */
-}
-  /* HEADER */
-  .rm-header {
-    text-align: center;
-    margin-bottom: 52px;
-    max-width: 520px;
-  }
-  .rm-title {
-    font-size: clamp(22px, 4.5vw, 36px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #fff;
-    margin-bottom: 10px;
-  }
-  .rm-subtitle {
-    font-size: clamp(11px, 1.8vw, 13.5px);
-    color: rgba(255,255,255,0.4);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    line-height: 1.6;
-  }
-
-  /* TIMELINE CONTAINER */
-  .rm-timeline {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-  }
-
-  /* SNAKE SVG */
-  .rm-svg {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  /* STEPS WRAPPER */
-  .rm-steps {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* DESKTOP ROW */
-  .rm-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 168px;
-     padding: 0 40px;  /* ← add this */
-  }
-
-  /* MOBILE ROW */
-  .rm-row--mobile {
-    align-items: flex-start;
-    min-height: unset;
-    padding: 18px 0;
-  }
-
-  /* CIRCLE */
-  .rm-circle-col {
-    flex-shrink: 0;
-    width: 72px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .rm-circle {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.16);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 0 7px rgba(255,255,255,0.025);
-  }
-  .rm-circle:hover {
-    background: rgba(255,255,255,0.12);
-  }
-  .rm-num {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.8);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    letter-spacing: 0.07em;
-  }
-
-  /* TEXT BLOCK */
-  .rm-text {
-    flex: 1;
-    padding: 0 22px;
-max-width: 280px;  /* ← add this */
-  }
-  .rm-text--align-right {
-    text-align: right;
-  }
-  .rm-text--align-left {
-    text-align: left;
-  }
-  .rm-text--mobile {
-    padding: 4px 14px 0 10px;
-  }
-
-  .rm-step-title {
-   font-size: clamp(16px, 2.8vw, 22px);
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.01em;
-    margin-top: 5px
-    margin-bottom: 8px;
-    font-family: 'Georgia', serif;
-  }
-  .rm-step-desc {
-    font-size: clamp(10px, 1.6vw, 12.5px);
-    color: rgba(255,255,255,0.42);
-    line-height: 1.7;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 400;
-    margin-top :10px
-  }
-    .rm-row:nth-child(5) {
-  align-items: flex-end;
-  padding-bottom: 20px;  /* ← adjust as needed */
-}
-  .rm-row:last-child {
-  margin-top: 30px;   /* ← adjust as needed */
-  margin-right: 40px; /* ← adjust as needed */
-}  
-
-  /* MOBILE — vertical line instead of snake */
-  @media (max-width: 599px) {
-    .rm-steps::before {
-      content: '';
-      position: absolute;
-      left: 35px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: rgba(255,255,255,0.12);
-      z-index: 0;
-    }
-    .rm-circle-col {
-      width: 70px;
-      position: relative;
-      z-index: 1;
-    }
-    .rm-circle {
-      width: 44px;
-      height: 44px;
-    }
-    .rm-num {
-      font-size: 11px;
-    }
-  }
-`;

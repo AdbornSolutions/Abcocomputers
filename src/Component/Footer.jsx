@@ -33,7 +33,7 @@ const Footer = () => {
 
         <a href="tel:+919370181988" className="flex items-center gap-3 hover:text-[#2BD7D7] transition-colors cursor-pointer">
           <img src={phoneIcon} className="w-5 h-5" />
-          <span>+91-9370181988</span>
+          <span>  +1 870 2102450</span>
         </a>
 
         <a href="mailto:hr-manager@abcocomputers.com" className="flex items-center gap-3 hover:text-[#2BD7D7] transition-colors cursor-pointer">
@@ -44,8 +44,8 @@ const Footer = () => {
         <div className="flex items-start gap-3">
           <img src={mapIcon} className="w-5 h-5 mt-1" />
           <span className="text-[12px]">
-            Plot No.47, 3rd Floor, Katol Road, Khamla <br />
-            Nagpur, Maharashtra, 440023 India.
+            Plot No. 47, 3rd Floor, Kotwal Nagar, Khamla, Laxmi Nagar , Nagpur, Maharashtra, India, 440022 
+            
           </span>
         </div>
 
@@ -107,11 +107,7 @@ const Footer = () => {
             Privacy Policy
           </span>
         </li>
-        <li>
-          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">
-            Refund & Return Policy
-          </span>
-        </li>
+        
       </ul>
     </div>
 
