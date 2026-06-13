@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollReveal from "./ScrollReveal";
 
 // icons (you can replace with your own images if needed)
 import { FaWhatsapp } from "react-icons/fa";
@@ -9,7 +10,7 @@ const Contact = () => {
     <div className="w-full bg-[#060B14] py-20 px-4 flex justify-center">
 
       {/* CONTAINER */}
-      <div className="w-full max-w-4xl text-center text-white">
+      <ScrollReveal className="w-full max-w-4xl text-center text-white">
 
         {/* BUTTON */}
         <div className="mb-6">
@@ -24,7 +25,7 @@ const Contact = () => {
   
   shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),0_8px_30px_rgba(0,0,0,0.4)]
   
-  hover:scale-105 transition duration-300">
+  magnetic-cta">
     Contact us
   </button>
 </div>
@@ -42,7 +43,7 @@ const Contact = () => {
 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md
 border-l border-r border-white/50 
 rounded-full px-6 py-3 
-w-full sm:w-[460px]
+w-full sm:w-[460px] premium-glass
 
 
 ">
@@ -64,7 +65,7 @@ w-full sm:w-[460px]
     border-l border-r border-white/50 
     flex items-center justify-center cursor-pointer
     shadow-[inset_0_2px_4px_rgba(255,255,255,0.2),0_6px_20px_rgba(0,0,0,0.4)]
-    hover:bg-white/20 transition">
+    hover:bg-white/20 transition magnetic-cta">
       <MdEmail className="text-white text-lg" />
     </div>
 
@@ -74,14 +75,14 @@ w-full sm:w-[460px]
     border-l border-r border-white/50 
     flex items-center justify-center cursor-pointer
     shadow-[inset_0_2px_4px_rgba(255,255,255,0.2),0_6px_20px_rgba(0,0,0,0.4)]
-    hover:bg-white/20 transition">
+    hover:bg-white/20 transition magnetic-cta">
       <FaWhatsapp className="text-white text-lg" />
     </div>
 
   </div>
 
 </div>
-      </div>
+      </ScrollReveal>
     </div>
   );
 };

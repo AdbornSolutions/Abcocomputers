@@ -10,6 +10,7 @@ import {
   FaChartBar,
   FaRocket,
 } from "react-icons/fa";
+import ScrollReveal from "../Common/ScrollReveal";
 
 // ICON MAP
 const iconMap = {
@@ -37,7 +38,7 @@ const YourGateway = () => {
     <div className="w-full bg-[#060B14] text-white py-12 md:py-16">
 
       {/* ===== HEADING ===== */}
-      <div className="w-full px-4 md:px-10 lg:px-20 mb-8 text-center md:text-left">
+      <ScrollReveal className="w-full px-4 md:px-10 lg:px-20 mb-8 text-center md:text-left">
         <h2
           className="text-[28px] sm:text-[34px] md:text-[42px] font-medium leading-tight 
           bg-[linear-gradient(95deg,_#FFFFFF_0.2%,_#2BD7D7_30%)] 
@@ -51,7 +52,7 @@ const YourGateway = () => {
         <p className="text-white mt-3 text-[14px] sm:text-[16px] md:text-[20px]">
           "Where talent meets opportunity, and innovation fuels success."
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* ===== SLIDER SECTION ===== */}
       <div className="relative w-full">
@@ -62,7 +63,8 @@ const YourGateway = () => {
           className="hidden md:flex items-center justify-center 
           absolute left-4 md:left-10 bottom-[-80px] -translate-y-1/2 
           w-10 h-10 rounded-full border border-white/20 
-          bg-[#0b1220] hover:bg-white/10 transition z-20"
+          bg-[#0b1220] hover:bg-white/10 transition z-20 magnetic-cta"
+          aria-label="Scroll gateway cards left"
         >
           <FaChevronLeft size={14} />
         </button>
@@ -73,7 +75,8 @@ const YourGateway = () => {
           className="hidden md:flex items-center justify-center 
           absolute right-4 md:right-10 bottom-[-80px] -translate-y-1/2 
           w-10 h-10 rounded-full border border-white/20 
-          bg-[#0b1220] hover:bg-white/10 transition z-20"
+          bg-[#0b1220] hover:bg-white/10 transition z-20 magnetic-cta"
+          aria-label="Scroll gateway cards right"
         >
           <FaChevronRight size={14} />
         </button>
@@ -85,17 +88,21 @@ const YourGateway = () => {
           px-4 sm:px-8 md:px-[120px] pb-2"
         >
           {gatewayData.map((item, index) => (
-            <div
+            <ScrollReveal
               key={index}
+              delay={index * 80}
               className="flex-shrink-0 
               w-[82vw] max-w-[320px] sm:w-[300px] md:w-[380px] md:max-w-none lg:w-[401px] 
-              h-auto md:h-[205px]
-              bg-[#0b1220] p-4 md:p-5 rounded-[20px] md:rounded-[30px] 
-              border border-white/10 flex flex-col justify-between"
+              h-auto md:h-[205px]"
             >
+              <div
+                className="h-full
+              bg-[#0b1220] p-4 md:p-5 rounded-[20px] md:rounded-[30px] 
+              border border-white/10 flex flex-col justify-between lift-card"
+              >
               
               {/* ICON + TITLE */}
-              <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3">
                 <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center 
                   bg-white/10 rounded-full text-[16px] md:text-[20px]">
                   {iconMap[item.title]}
@@ -104,14 +111,15 @@ const YourGateway = () => {
                 <h3 className="text-[16px] sm:text-[18px] md:text-[22px] lg:text-[26px] font-medium leading-snug">
                   {item.title}
                 </h3>
-              </div>
+                </div>
 
               {/* DESC */}
-              <p className="text-white text-[12px] sm:text-[13px] leading-relaxed mt-3">
+                <p className="text-white text-[12px] sm:text-[13px] leading-relaxed mt-3">
                 {item.desc}
-              </p>
+                </p>
 
-            </div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 

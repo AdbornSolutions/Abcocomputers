@@ -1,6 +1,6 @@
 import React from "react";
+import ScrollReveal from "./ScrollReveal";
 
-// ===== DATA =====
 const testimonials = [
   {
     name: "Rohit Sharma",
@@ -29,20 +29,19 @@ const testimonials = [
   },
 ];
 
-// duplicate for infinite loop
 const loopData = [...testimonials, ...testimonials];
 
 const Card = ({ name, location, text }) => (
-  <div className="w-[270px] sm:w-[320px] min-h-[180px] flex-shrink-0 
-    bg-[#0b1220] p-5 rounded-[20px] border border-white/10 mr-6">
-
-    <p className="text-gray-300 text-[12px] mb-4">
-      “{text}”
-    </p>
+  <div
+    className="w-[270px] sm:w-[320px] min-h-[180px] flex-shrink-0 
+    bg-[#0b1220] p-5 rounded-[20px] border border-white/10 mr-6 lift-card"
+  >
+    <p className="text-gray-300 text-[12px] mb-4">“{text}”</p>
 
     <div className="flex items-center gap-3">
       <img
         src="https://randomuser.me/api/portraits/men/32.jpg"
+        alt={name}
         className="w-10 h-10 rounded-md"
       />
 
@@ -58,59 +57,52 @@ const Card = ({ name, location, text }) => (
 const Testimonials = () => {
   return (
     <div className="w-full bg-[#060B14] py-20 px-4 flex justify-center">
-      
-      {/* 🔥 FULL WIDTH WRAPPER */}
       <div className="w-full relative overflow-hidden">
-
-        <div className="max-w-6xl mx-auto text-center">
-
-          {/* TAG */}
-          <div className="inline-block px-5 py-2 mb-6 rounded-full 
+        <ScrollReveal className="max-w-6xl mx-auto text-center">
+          <div
+            className="inline-block px-5 py-2 mb-6 rounded-full 
             bg-white/10 backdrop-blur-md border border-white/20 
-            text-gray-300 text-sm shadow-sm">
+            text-gray-300 text-sm shadow-sm premium-glass"
+          >
             Testimonials
           </div>
 
-          {/* HEADING */}
-          <h2 className="text-[26px] sm:text-[34px] md:text-[42px] font-medium leading-tight 
-          bg-[linear-gradient(90deg,_#FFFFFF_0.3%,_#2BD7D7_60%)] 
-          bg-clip-text text-transparent">
+          <h2
+            className="text-[26px] sm:text-[34px] md:text-[42px] font-medium leading-tight 
+            bg-[linear-gradient(90deg,_#FFFFFF_0.3%,_#2BD7D7_60%)] 
+            bg-clip-text text-transparent"
+          >
             HERE IS WHAT OUR CLIENTS HAVE TO SAY
           </h2>
+        </ScrollReveal>
 
-        </div>
+        <ScrollReveal delay={160} className="mt-12">
+          <div className="overflow-hidden">
+            <div className="marquee-left">
+              {loopData.map((item, i) => (
+                <Card key={i} {...item} />
+              ))}
+            </div>
+          </div>
 
-        {/* ===== MARQUEE SECTION ===== */}
-        <div className="mt-12">
+          <div className="overflow-hidden mt-6">
+            <div className="marquee-right">
+              {loopData.map((item, i) => (
+                <Card key={i} {...item} />
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
 
-          {/* ROW 1 */}
-<div className="overflow-hidden">
-  <div className="marquee-left">
-    {loopData.map((item, i) => (
-      <Card key={i} {...item} />
-    ))}
-  </div>
-</div>
+        <div
+          className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-[140px] md:w-[180px] 
+          bg-gradient-to-r from-[#060B14] to-transparent z-20"
+        ></div>
 
-{/* ROW 2 */}
-<div className="overflow-hidden mt-6">
-  <div className="marquee-right">
-    {loopData.map((item, i) => (
-      <Card key={i} {...item} />
-    ))}
-  </div>
-</div>
-
-        </div>
-
-        {/* 🔥 LEFT FADE (FLUID) */}
-        <div className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-[140px] md:w-[180px] 
-        bg-gradient-to-r from-[#060B14] to-transparent z-20"></div>
-
-        {/* 🔥 RIGHT FADE (FLUID) */}
-        <div className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-[140px] md:w-[180px] 
-        bg-gradient-to-l from-[#060B14] to-transparent z-20"></div>
-
+        <div
+          className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-[140px] md:w-[180px] 
+          bg-gradient-to-l from-[#060B14] to-transparent z-20"
+        ></div>
       </div>
     </div>
   );

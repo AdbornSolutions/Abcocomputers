@@ -7,6 +7,7 @@ import heroBg from "../../assets/home-page/home-bg.png";
 import Sliders from "../Common/Sliders";
 import CareerinUsa from "./CareerinUsa";
 import DarkVeil from "./DarkVeil"; // Ensure this path matches your file structure
+import ScrollReveal from "../Common/ScrollReveal";
 
 const HomeHeroSection = () => {
   return (
@@ -35,21 +36,41 @@ const HomeHeroSection = () => {
 
         {/* Overlay (Fixed double hash typo) */}
         <div className="absolute inset-0 bg-[#060B14]/70 z-0"></div>
+        <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#020617]/70 to-transparent z-0"></div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
-          <h1 className="font-heading text-[32px] sm:text-[40px] md:text-[48px] leading-tight max-w-3xl">
-            Unlock Your IT Career in the USA with ABCO Computers
-          </h1>
+          <ScrollReveal
+            as="span"
+            variant="scale"
+            className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs sm:text-sm text-cyan-100 backdrop-blur-xl premium-glass"
+          >
+            Career training. Visa guidance. Placement support.
+          </ScrollReveal>
 
-          <p className="mt-4 max-w-2xl text-gray-300 text-[15px] sm:text-[18px] leading-relaxed">
+          <ScrollReveal
+            as="h1"
+            delay={120}
+            className="mt-5 font-heading text-[32px] sm:text-[40px] md:text-[48px] leading-tight max-w-3xl"
+          >
+            Unlock Your IT Career in the USA with ABCO Computers
+          </ScrollReveal>
+
+          <ScrollReveal
+            as="p"
+            delay={220}
+            className="mt-4 max-w-2xl text-gray-300 text-[15px] sm:text-[18px] leading-relaxed"
+          >
             Tap into our network of employers and land positions that match your
             skills and career goals.
-          </p>
+          </ScrollReveal>
 
           {/* Buttons */}
-          <div className="mt-6 flex gap-4 flex-wrap justify-center">
-            <button className="px-6 py-3 w-44 rounded-full bg-white/10 backdrop-blur-lg border-t border-white/60 text-white shadow-lg hover:scale-105 transition">
+          <ScrollReveal
+            delay={320}
+            className="mt-6 flex gap-4 flex-wrap justify-center"
+          >
+            <button className="px-6 py-3 w-44 rounded-full bg-white/10 backdrop-blur-lg border border-white/25 text-white shadow-lg magnetic-cta">
               Get Started
             </button>
 
@@ -57,10 +78,10 @@ const HomeHeroSection = () => {
               bg-white text-black border border-black
               hover:bg-[linear-gradient(90deg,_#FFFFFF_0%,_#2BD7D7_87.5%)] 
               hover:border-[#2BD7D7]
-              transition duration-300">
+              magnetic-cta">
               Book a call
             </button>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* GRADIENT */}
