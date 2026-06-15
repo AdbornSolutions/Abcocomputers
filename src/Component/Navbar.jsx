@@ -64,7 +64,7 @@ const Navbar = () => {
             to="/contactus"
             className="px-5 xl:px-6 py-3 rounded-full
             bg-white/10 backdrop-blur-md border border-white/20
-            text-white hover:bg-white/20 whitespace-nowrap magnetic-cta"
+            text-white"
           >
             Book a call
           </Link>
