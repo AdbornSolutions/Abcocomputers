@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "../Common/ScrollReveal";
 
 const CareerSection = ({ title, description, points, image, reverse, linkPath }) => {
   return (
@@ -11,7 +12,11 @@ const CareerSection = ({ title, description, points, image, reverse, linkPath })
         }`}
       >
         {/* CONTENT */}
-        <div className={reverse ? "order-2 lg:order-2" : "order-2 lg:order-1"}>
+        <ScrollReveal
+          variant={reverse ? "right" : "left"}
+          threshold={0.22}
+          className={reverse ? "order-2 lg:order-2" : "order-2 lg:order-1"}
+        >
           
           {/* CLICKABLE TITLE */}
           <Link 
@@ -40,10 +45,15 @@ const CareerSection = ({ title, description, points, image, reverse, linkPath })
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* IMAGE */}
-        <div className={reverse ? "order-1 lg:order-1" : "order-1 lg:order-2"}>
+        <ScrollReveal
+          variant={reverse ? "left" : "right"}
+          delay={140}
+          threshold={0.22}
+          className={reverse ? "order-1 lg:order-1" : "order-1 lg:order-2"}
+        >
           <div className="rounded-2xl overflow-hidden ">
             <img
               src={image}
@@ -51,7 +61,7 @@ const CareerSection = ({ title, description, points, image, reverse, linkPath })
             className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain"
             />
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
     </section>

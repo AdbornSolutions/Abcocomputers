@@ -23,6 +23,8 @@ const Learning = () => {
         description="Build your global career with expert admission guidance, exam preparation, visa support, and career-focused learning designed for your future success."
         primaryBtn="Start Your Journey"
         secondaryBtn="Book Free Consultation"
+        showGridPattern
+        showParticles={false}
      
       />
      <Expertise/>

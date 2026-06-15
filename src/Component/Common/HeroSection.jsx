@@ -1,5 +1,6 @@
 import React from "react";
 import LightRays from "./Particles"; // Added import
+import { AnimatedGridPattern } from "../../components/ui/animated-grid-pattern";
 
 const HomeSection = ({
   smallText,
@@ -7,24 +8,28 @@ const HomeSection = ({
   description,
   primaryBtn,
   secondaryBtn,
+  showGridPattern = false,
+  showParticles = true,
 }) => {
   return (
     <div className="w-full min-h-[86vh] md:min-h-[110vh] flex flex-col items-center justify-center text-center px-4 pt-24 pb-14 text-white relative overflow-hidden bg-[#060B14]">
 
       {/* 🌟 ANIMATED LIGHT RAYS BACKGROUND */}
-      <div className="absolute inset-0 z-0">
-        <LightRays
-    particleColors={["#ffffff"]}
-    particleCount={200}
-    particleSpread={10}
-    speed={0.1}
-    particleBaseSize={100}
-    moveParticlesOnHover
-    alphaParticles={false}
-    disableRotation={false}
-    pixelRatio={1}
-/>
-      </div>
+      {showParticles && (
+        <div className="absolute inset-0 z-0">
+          <LightRays
+            particleColors={["#ffffff"]}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover
+            alphaParticles={false}
+            disableRotation={false}
+            pixelRatio={1}
+          />
+        </div>
+      )}
 
    
 
@@ -32,6 +37,18 @@ const HomeSection = ({
       {/* 🔥 DARK OVERLAY FOR DEPTH */}
       {/* Added pointer-events-none so it doesn't block the mouse interactions for LightRays */}
       <div className="absolute inset-0 bg-[#060B14]/70 z-0 pointer-events-none"></div>
+
+      {showGridPattern && (
+        <AnimatedGridPattern
+          width={46}
+          height={46}
+          numSquares={70}
+          maxOpacity={0.28}
+          duration={3.5}
+          repeatDelay={0.4}
+          className="z-[1] text-cyan-300/45 [mask-image:radial-gradient(ellipse_at_center,white_0%,white_45%,transparent_78%)]"
+        />
+      )}
 
       {/* CONTENT */}
       <div className="relative z-10 flex flex-col items-center max-w-3xl">
