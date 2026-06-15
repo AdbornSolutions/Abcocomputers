@@ -1,5 +1,22 @@
 import React from "react";
 import ScrollReveal from "../Common/ScrollReveal";
+import PixelTransition from "../PixelTransition";
+
+import careerInUsaImg from "../../assets/Cards/career-in-usa.png";
+import jobInUsaImg from "../../assets/Cards/job-in-usa.png";
+import masterInUsaImg from "../../assets/Cards/master-in-usa.png";
+import greenCardImg from "../../assets/Cards/green-card.png";
+import h1bVisaImg from "../../assets/Cards/h1b-visa.png";
+import f1VisaImg from "../../assets/Cards/f1-visa.png";
+
+const cardImages = [
+  careerInUsaImg,
+  jobInUsaImg,
+  masterInUsaImg,
+  greenCardImg,
+  h1bVisaImg,
+  f1VisaImg,
+];
 
 const Services = ({
   title = "Services",
@@ -30,50 +47,48 @@ const Services = ({
 
         <div className={`grid grid-cols-1 sm:grid-cols-2 ${columns} gap-6`}>
           {servicesData.map((item, index) => (
-            <ScrollReveal
-              key={index}
-              delay={index * 90}
-              className="h-full"
-            >
-              <div
-                className="h-full bg-white/5 backdrop-blur-md 
-                border border-white/10 
-                rounded-xl p-6 
-                text-white 
-                hover:bg-white/10 
-                lift-card"
-              >
-                {item.icon && (
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/10">
-                    <img
-                      src={item.icon}
-                      alt={item.title}
-                      className="w-9 h-9 object-contain opacity-80"
-                    />
+            <ScrollReveal key={index} delay={index * 90} className="h-full">
+              <PixelTransition
+                firstContent={
+                  <img
+                    src={cardImages[index % cardImages.length]}
+                    alt={item.title}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                }
+                secondContent={
+                  <div className="flex h-full w-full flex-col justify-center bg-[#111] p-6 text-white">
+                    {item.icon && (
+                      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/10">
+                        <img
+                          src={item.icon}
+                          alt=""
+                          className="h-9 w-9 object-contain opacity-80"
+                        />
+                      </div>
+                    )}
+
+                    {item.title && (
+                      <h3 className="mb-3 font-heading text-[25px] leading-tight">
+                        {item.title}
+                      </h3>
+                    )}
+
+                    {item.desc && (
+                      <p className="font-body text-[14px] leading-[1.6] text-gray-300">
+                        {item.desc}
+                      </p>
+                    )}
                   </div>
-                )}
-
-                {item.title && (
-                  <h3 className="font-heading text-[25px] mb-2">
-                    {item.title}
-                  </h3>
-                )}
-
-                {item.desc && (
-                  <p className="text-gray-400 text-[14px] leading-[1.6] font-body">
-                    {item.desc}
-                  </p>
-                )}
-
-                {item.link && (
-                  <a
-                    href={item.link}
-                    className="inline-block mt-4 text-sm text-blue-400 hover:underline"
-                  >
-                    Learn More →
-                  </a>
-                )}
-              </div>
+                }
+                gridSize={9}
+                pixelColor="#ffffff"
+                once={false}
+                animationStepDuration={0.3}
+                aspectRatio="75%"
+                className="custom-pixel-card lift-card"
+                style={{ width: "100%" }}
+              />
             </ScrollReveal>
           ))}
         </div>

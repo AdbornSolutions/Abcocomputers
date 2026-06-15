@@ -12,7 +12,11 @@ const CareerinUsa = () => {
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10">
 
         {/* LEFT IMAGE */}
-        <ScrollReveal variant="left" className="hidden md:block">
+        <ScrollReveal
+          variant="left"
+          delay={250}
+          className="hidden md:block career-image-reveal"
+        >
           <img
             src={leftImg}
             alt="graduate"
@@ -38,7 +42,11 @@ From skill development to job preparation, our team supports you at every step o
         </ScrollReveal>
 
         {/* RIGHT IMAGE */}
-        <ScrollReveal variant="right" className="hidden md:block">
+        <ScrollReveal
+          variant="right"
+          delay={250}
+          className="hidden md:block career-image-reveal"
+        >
           <img
             src={rightImg}
             alt="professional"
