@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gatewayData } from "../../data/data";
 import {
-  FaChevronLeft,
-  FaChevronRight,
+
   FaMoneyBillWave,
   FaUserGraduate,
   FaBriefcase,
@@ -28,11 +27,29 @@ const YourGateway = () => {
   const scroll = (direction) => {
     if (!sliderRef.current) return;
     const scrollAmount = 350;
+
+    if (
+      direction === "right" &&
+      sliderRef.current.scrollLeft + sliderRef.current.clientWidth >=
+        sliderRef.current.scrollWidth - scrollAmount
+    ) {
+      sliderRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+
     sliderRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      scroll("right");
+    }, 2800);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-full bg-[#060B14] text-white py-12 md:py-16">
@@ -57,29 +74,9 @@ const YourGateway = () => {
       {/* ===== SLIDER SECTION ===== */}
       <div className="relative w-full">
 
-        {/* LEFT ARROW */}
-        <button
-          onClick={() => scroll("left")}
-          className="hidden md:flex items-center justify-center 
-          absolute left-4 md:left-10 bottom-[-80px] -translate-y-1/2 
-          w-10 h-10 rounded-full border border-white/20 
-          bg-[#0b1220] hover:bg-white/10 transition z-20 magnetic-cta"
-          aria-label="Scroll gateway cards left"
-        >
-          <FaChevronLeft size={14} />
-        </button>
+      
 
-        {/* RIGHT ARROW */}
-        <button
-          onClick={() => scroll("right")}
-          className="hidden md:flex items-center justify-center 
-          absolute right-4 md:right-10 bottom-[-80px] -translate-y-1/2 
-          w-10 h-10 rounded-full border border-white/20 
-          bg-[#0b1220] hover:bg-white/10 transition z-20 magnetic-cta"
-          aria-label="Scroll gateway cards right"
-        >
-          <FaChevronRight size={14} />
-        </button>
+       
 
         {/* SLIDER */}
         <div
