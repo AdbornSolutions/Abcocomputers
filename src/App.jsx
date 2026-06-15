@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Pages
@@ -8,6 +8,8 @@ import Contactus from "./Page/Contactus";
 import Services from "./Page/Services/Services";
 import Department from "./Page/Departments/Department";
 import Learning from "./Page/Learning";
+import SuccessStories from "./Page/SuccessStories";
+import LifeAtAbco from "./Page/LifeAtAbco";
 
 // Department Pages
 import HrOnboarding from "./Page/Departments/HrOnboarding";
@@ -27,10 +29,26 @@ import GreenCard from "./Page/Services/GreenCard";
 import F1visa from "./Page/Services/F1visa";
 import H1Bvisa from "./Page/Services/H1Bvisa";
 import ScrollToTop from "./Component/ScrollToTop";
+import WelcomeLoader from "./Component/WelcomeLoader";
 
 const App = () => {
+  const [showLoader, setShowLoader] = useState(true);
+  const [isLoaderLeaving, setIsLoaderLeaving] = useState(false);
+
+  useEffect(() => {
+    const leaveTimer = setTimeout(() => setIsLoaderLeaving(true), 1800);
+    const removeTimer = setTimeout(() => setShowLoader(false), 2500);
+
+    return () => {
+      clearTimeout(leaveTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
+
   return (
     <>
+      {showLoader && <WelcomeLoader isLeaving={isLoaderLeaving} />}
+
       <ScrollToTop />
 
       <Routes>
@@ -41,6 +59,8 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/department" element={<Department />} />
         <Route path="/learning" element={<Learning />} />
+        <Route path="/success-stories" element={<SuccessStories />} />
+        <Route path="/life-at-abco" element={<LifeAtAbco />} />
 
         {/* DEPARTMENTS */}
         <Route path="/hr-onboarding" element={<HrOnboarding />} />

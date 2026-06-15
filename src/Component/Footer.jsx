@@ -77,18 +77,18 @@ const Footer = () => {
       </ul>
     </div>
 
-    {/* EXPLORE */}
+    {/* INSIGHTS */}
     <div>
-      <h3 className="text-[18px] md:text-[22px] font-semibold mb-5">Explore</h3>
+      <h3 className="text-[18px] md:text-[22px] font-semibold mb-5">Insights</h3>
       <ul className="space-y-3 text-[14px] md:text-[15px]">
         <li>
           <Link to="/services" className="hover:text-[#2BD7D7] transition-colors">Careers</Link>
         </li>
         <li>
-          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">Blogs</span>
+          <Link to="/life-at-abco" className="hover:text-[#2BD7D7] transition-colors">Life at ABCO</Link>
         </li>
         <li>
-          <span className="hover:text-[#2BD7D7] transition-colors cursor-pointer">Success Stories</span>
+          <Link to="/success-stories" className="hover:text-[#2BD7D7] transition-colors">Success Stories</Link>
         </li>
       </ul>
     </div>

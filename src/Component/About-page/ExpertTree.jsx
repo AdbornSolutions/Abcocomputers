@@ -43,7 +43,7 @@ const ExpertTree = () => {
   }, []);
 
   return (
-    <section className="w-full bg-[#060B14] text-white py-16 px-4 sm:px-6 md:px-10 lg:px-16">
+    <section className="hidden md:block w-full bg-[#060B14] text-white py-16 px-4 sm:px-6 md:px-10 lg:px-16">
 
       {/* ===== HEADING ===== */}
       <div className="text-center mb-24">

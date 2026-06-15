@@ -1,111 +1,127 @@
 import React from "react";
-import { FaChartBar, FaEye, FaFlag } from "react-icons/fa";
+import { FaChartBar, FaEye, FaFlag, FaHandshake, FaUsers } from "react-icons/fa";
+import ScrollReveal from "../Common/ScrollReveal";
+
+const values = [
+  {
+    icon: <FaHandshake />,
+    title: "Highly Supportive",
+    text: "We guide every candidate and client with clear communication, practical advice, and dependable support at each step.",
+  },
+  {
+    icon: <FaUsers />,
+    title: "Collaborative",
+    text: "We work closely with people and businesses to understand their goals, build trust, and deliver the right solutions.",
+  },
+  {
+    icon: <FaChartBar />,
+    title: "Business Focused",
+    text: "We respect every business requirement and create IT and staffing solutions that support performance and long-term growth.",
+  },
+];
 
 const OurPurpose = () => {
   return (
-    <section className="relative w-full min-h-screen bg-[#060B14] text-white py-16 px-4 sm:px-6 md:px-10 lg:px-12 overflow-hidden">
+    <section className="relative w-full bg-[#060B14] text-white py-20 px-4 sm:px-6 md:px-10 lg:px-12 overflow-hidden">
+      <div className="absolute -top-20 left-0 w-full h-40 bg-[#060B14] blur-[14px] z-20"></div>
+      <div className="absolute right-[-120px] top-[24%] h-[260px] w-[260px] bg-cyan-300/20 blur-[120px] pointer-events-none"></div>
 
-      {/* 🔥 RIGHT SIDE GLOW (NOW BEHIND CARDS) */}
-      <div className="absolute w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] 
-      bg-white right-[-100px] top-[32%] blur-[90px] opacity-50 
-      pointer-events-none z-0"></div>
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <ScrollReveal variant="left" className="space-y-8">
+          <span
+            className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm text-gray-300 shadow premium-glass"
+          >
+            Our Purpose & Principles
+          </span>
 
-      {/* TOP GRADIENT */}
-      <div className="absolute -top-20 left-0 w-full h-40 
-      bg-[#060B14] blur-[14px] z-20"></div>
+          <div>
+            <h2 className="font-heading text-[34px] sm:text-[46px] md:text-[56px] leading-tight">
+              Built to guide talent,
+              <span className="block bg-[linear-gradient(95deg,_#FFFFFF_0.2%,_#2BD7D7_55%)] bg-clip-text text-transparent">
+                support growth.
+              </span>
+            </h2>
+            <p className="mt-5 max-w-xl text-[14px] sm:text-[16px] leading-relaxed text-gray-300">
+              ABCO Computers brings together career guidance, IT consulting,
+              staffing support, and learning services to help professionals and
+              businesses move with clarity and confidence.
+            </p>
+          </div>
 
-      {/* TAG */}
-      <div className="flex justify-center mb-10 mt-5 relative z-10">
-        <span className="px-5 py-2 rounded-full 
-        bg-white/10 backdrop-blur-md border border-white/20 
-        text-gray-300 text-sm shadow">
-          Our Purpose & Principles
-        </span>
+          <div className="grid grid-cols-3 gap-3 max-w-xl">
+            {["Career", "Consulting", "Placement"].map((item) => (
+              <div
+                key={item}
+                className="border border-white/10 bg-white/[0.04] px-3 py-4 text-center"
+              >
+                <p className="text-[11px] sm:text-[13px] text-gray-400">{item}</p>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        <div className="space-y-4">
+          {values.map((item, index) => (
+            <ScrollReveal
+              key={item.title}
+              variant="right"
+              delay={index * 120}
+              className="group"
+            >
+              <div className="flex gap-4 border border-white/10 bg-[#0b1220] p-5 sm:p-6 transition duration-500 hover:border-cyan-300/40 hover:bg-white/[0.06]">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-cyan-200 transition group-hover:scale-110">
+                  {item.icon}
+                </div>
+                <div>
+                  <div className="mb-2 flex items-center gap-3">
+                    <span className="text-xs text-cyan-200/70">
+                      0{index + 1}
+                    </span>
+                    <h3 className="text-[18px] sm:text-[21px] font-semibold">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-[12px] sm:text-[14px] leading-relaxed text-gray-400">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
 
-      {/* GRID */}
-      <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto relative z-10">
-
-        {/* ===== LEFT BIG CARD ===== */}
-        <div className="bg-[#0b1220] 
-        p-6 sm:p-8 md:p-16 lg:p-24 
-        rounded-[20px] border border-white/10 flex flex-col">
-
-          {/* ICON + TITLE */}
-          <div className="flex items-center gap-3 mb-4 ">
-            <FaChartBar className="text-white text-lg md:text-xl" />
-            <h3 className="text-[20px] sm:text-[24px] md:text-[26px] font-semibold">
-              Our Value
-            </h3>
-          </div>
-
-          {/* CONTENT */}
-          <ul className="space-y-3 text-gray-400 text-[12px] sm:text-[13px] leading-relaxed">
-
-            <li>
-              <span className="text-white font-semibold">• Highly Supportive :</span>{" "}
-             We support every candidate and client with proper guidance, transparent communication, and professional service.
-            </li>
-
-            <li>
-              <span className="text-white font-semibold">• Collaborative :</span>{" "}
-              We believe in teamwork and strong relationships. Our team works closely with clients and candidates to understand their goals and provide the right solutions
-            </li>
-
-            <li>
-              <span className="text-white font-semibold">• Business Focused :</span>{" "}
-              We respect every business requirement and deliver practical IT and staffing solutions that support productivity, performance, and long-term growth.
-            </li>
-
-          </ul>
-        </div>
-
-        {/* ===== RIGHT SIDE ===== */}
-        <div className="flex flex-col gap-6">
-
-          {/* VISION */}
-          <div className="bg-[#0b1220] 
-          p-6 sm:p-8 md:p-10 lg:p-12 
-          rounded-[20px] border border-white/10">
-            
-            <div className="flex items-center gap-3 mb-3">
-              <FaEye className="text-white text-base md:text-lg" />
-              <h3 className="text-[18px] md:text-[20px] font-semibold">
-                Our Vision
-              </h3>
+      <div className="relative z-10 mx-auto mt-8 grid max-w-6xl gap-4 md:grid-cols-2">
+        <ScrollReveal variant="left" delay={140}>
+          <div className="h-full border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+            <div className="mb-4 flex items-center gap-3">
+              <FaEye className="text-cyan-200" />
+              <h3 className="text-[20px] font-semibold">Our Vision</h3>
             </div>
-
-            <p className="text-gray-400 text-[12px] sm:text-[13px] leading-relaxed">
-              Our vision is to become a trusted global IT solutions and consulting partner known for innovation, quality services, career development, and customer satisfaction. We aim to help individuals and businesses achieve success through technology and talent.
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-gray-400">
+              To become a trusted global IT solutions and consulting partner
+              known for innovation, quality services, career development, and
+              customer satisfaction.
             </p>
-
           </div>
+        </ScrollReveal>
 
-          {/* MISSION */}
-          <div className="bg-[#0b1220] 
-          p-6 sm:p-8 md:p-10 lg:p-12 
-          rounded-[20px] border border-white/10">
-            
-            <div className="flex items-center gap-3 mb-3">
-              <FaFlag className="text-white text-base md:text-lg" />
-              <h3 className="text-[18px] md:text-[20px] font-semibold">
-                Our Mission
-              </h3>
+        <ScrollReveal variant="right" delay={240}>
+          <div className="h-full border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+            <div className="mb-4 flex items-center gap-3">
+              <FaFlag className="text-cyan-200" />
+              <h3 className="text-[20px] font-semibold">Our Mission</h3>
             </div>
-
-            <p className="text-gray-400 text-[12px] sm:text-[13px] leading-relaxed">
-              Our mission is to provide reliable IT solutions, career guidance, staffing services, and learning support that help businesses grow and professionals build successful careers in the USA IT industry.
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-gray-400">
+              To provide reliable IT solutions, career guidance, staffing
+              services, and learning support that help businesses grow and
+              professionals build successful careers in the USA IT industry.
             </p>
-
           </div>
-
-        </div>
-
+        </ScrollReveal>
       </div>
-      {/* bottom GRADIENT */}
-      <div className="absolute -bottom-20 left-0 w-full h-40 
-      bg-[#060B14] blur-[14px] z-20"></div>
-      
+
+      <div className="absolute -bottom-20 left-0 w-full h-40 bg-[#060B14] blur-[14px] z-20"></div>
     </section>
   );
 };

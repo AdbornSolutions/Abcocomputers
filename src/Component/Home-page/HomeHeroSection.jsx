@@ -35,7 +35,7 @@ const HomeHeroSection = () => {
 
         {/* Content */}
         <div
-          className={`relative z-10 flex flex-col items-center transition-all duration-[1400ms] ease-out ${
+          className={`relative z-10 flex w-full max-w-[92vw] flex-col items-center transition-all duration-[1400ms] ease-out sm:max-w-3xl ${
             showContent
               ? "scale-100 opacity-100"
               : "scale-75 opacity-0"
@@ -44,7 +44,7 @@ const HomeHeroSection = () => {
           <ScrollReveal
             as="span"
             variant="scale"
-            className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs sm:text-sm text-cyan-100 backdrop-blur-xl premium-glass"
+            className="inline-flex max-w-full items-center rounded-full border border-white/20 bg-white/10 px-3 py-2 text-center text-[11px] text-cyan-100 backdrop-blur-xl premium-glass sm:px-4 sm:text-sm"
           >
             Career training. Visa guidance. Placement support.
           </ScrollReveal>
@@ -52,7 +52,7 @@ const HomeHeroSection = () => {
           <ScrollReveal
             as="h1"
             delay={120}
-            className="mt-5 font-heading text-[32px] sm:text-[40px] md:text-[48px] leading-tight max-w-3xl"
+            className="mt-5 max-w-3xl font-heading text-[28px] leading-tight sm:text-[40px] md:text-[48px]"
           >
             Unlock Your IT Career in the USA with ABCO Computers
           </ScrollReveal>
@@ -60,7 +60,7 @@ const HomeHeroSection = () => {
           <ScrollReveal
             as="p"
             delay={220}
-            className="mt-4 max-w-2xl text-gray-300 text-[15px] sm:text-[18px] leading-relaxed"
+            className="mt-4 max-w-2xl text-[14px] leading-relaxed text-gray-300 sm:text-[18px]"
           >
             Tap into our network of employers and land positions that match your
             skills and career goals.
@@ -80,7 +80,7 @@ const HomeHeroSection = () => {
               hover:bg-[linear-gradient(90deg,_#FFFFFF_0%,_#2BD7D7_87.5%)] 
               hover:border-[#2BD7D7]
               magnetic-cta">
-              Book a call
+              Contact us
             </button>
           </ScrollReveal>
         </div>

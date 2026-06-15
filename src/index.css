@@ -5,6 +5,20 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Default body font */
 body {
   @apply text-base md:text-[18px] leading-relaxed;
@@ -166,6 +180,81 @@ html {
 .custom-pixel-card {
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.welcome-loader-grid {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(43, 215, 215, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 215, 215, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 68%);
+  animation: welcome-grid-drift 7s linear infinite;
+}
+
+.welcome-logo-orbit {
+  position: relative;
+  animation: welcome-logo-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.welcome-logo-orbit::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(43, 215, 215, 0.35);
+  animation: welcome-orbit-pulse 1500ms ease-in-out infinite;
+}
+
+.welcome-progress {
+  width: 45%;
+  animation: welcome-progress 1800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes welcome-grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(44px, 44px, 0);
+  }
+}
+
+@keyframes welcome-logo-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.9);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes welcome-orbit-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes welcome-progress {
+  from {
+    width: 12%;
+    transform: translateX(-20%);
+  }
+  to {
+    width: 100%;
+    transform: translateX(0);
+  }
 }
 
 .parallax-soft {
