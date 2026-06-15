@@ -68,6 +68,21 @@ html {
   transform: translate3d(140px, 0, 0) scale(0.96);
 }
 
+.timeline-reveal-item {
+  transition:
+    opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 1200ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    filter 1200ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+
+.timeline-reveal-item.motion-reveal-left {
+  transform: translate3d(-80px, 16px, 0) scale(0.97);
+}
+
+.timeline-reveal-item.motion-reveal-right {
+  transform: translate3d(80px, 16px, 0) scale(0.97);
+}
+
 .motion-reveal-scale {
   transform: translate3d(0, 22px, 0) scale(0.94);
 }

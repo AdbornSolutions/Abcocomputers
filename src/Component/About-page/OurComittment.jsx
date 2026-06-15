@@ -1,4 +1,6 @@
 import React from "react";
+import ScrollReveal from "../Common/ScrollReveal";
+import timelineImg from "../../assets/DepartmentPage/accout-timeline.png";
 
 const OurCommitment = () => {
   const timelineItems = [
@@ -51,34 +53,28 @@ const OurCommitment = () => {
       {/* ===== MAIN GRID ===== */}
       <div className="grid lg:grid-cols-2 gap-2 items-center ">
 
-        {/* ===== LEFT SHAPES ===== */}
-        <div className="hidden lg:flex justify-center ">
-          <div className="grid grid-cols-2 gap-5">
-
-            <div className="flex flex-col gap-8 items-center">
-              <div className="w-[207px] h-[378px] bg-[#FFFF] rounded-full" />
-              <div className="w-[219px] h-[219px] bg-[#FFFF] rounded-full" />
-            </div>
-
-            <div className="flex flex-col gap-8 items-center -mt-16">
-              <div className="w-[219px] h-[219px] bg-[#FFFF] rounded-full" />
-              <div className="w-[207px] h-[378px] bg-[#FFFF] rounded-full" />
-            </div>
-
-          </div>
-        </div>
+        {/* ===== LEFT IMAGE ===== */}
+        <ScrollReveal variant="left" className="hidden lg:flex justify-center">
+          <img
+            src={timelineImg}
+            alt="ABCO process timeline"
+            className="w-full max-w-[520px] rounded-[28px] object-contain"
+          />
+        </ScrollReveal>
 
         {/* ===== TIMELINE ===== */}
         <div className="relative mt-6 md:-mt-32">
 
   {/* CENTER LINE */}
   <div className="absolute left-4 md:left-1/2 top-0 bottom-0 
-  w-[2px] md:w-[5px] bg-white md:-translate-x-1/2"></div>
+  w-[2px] md:w-[5px] bg-white/80 shadow-[0_0_24px_rgba(43,215,215,0.35)] md:-translate-x-1/2"></div>
 
   {timelineItems.map((item, i) => (
-    <div
+    <ScrollReveal
       key={i}
-      className={`relative flex items-start mb-10 
+      variant={item.side === "right" ? "right" : "left"}
+      delay={i * 120}
+      className={`timeline-reveal-item relative flex items-start mb-10 
       md:items-center
       ${
         item.side === "right"
@@ -108,7 +104,7 @@ const OurCommitment = () => {
 
       </div>
 
-    </div>
+    </ScrollReveal>
   ))}
 
 </div>
