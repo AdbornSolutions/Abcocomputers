@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // HERO BG VIDEO
 import heroVideo from "../../assets/Herobg.mp4";
@@ -9,6 +9,7 @@ import CareerinUsa from "./CareerinUsa";
 import ScrollReveal from "../Common/ScrollReveal";
 
 const HomeHeroSection = () => {
+  const videoRef = useRef(null);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
@@ -16,18 +17,47 @@ const HomeHeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return undefined;
+
+    const playVideo = () => {
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise) {
+        playPromise.catch(() => {});
+      }
+    };
+
+    playVideo();
+    document.addEventListener("visibilitychange", playVideo);
+    window.addEventListener("touchstart", playVideo, { once: true, passive: true });
+
+    return () => {
+      document.removeEventListener("visibilitychange", playVideo);
+      window.removeEventListener("touchstart", playVideo);
+    };
+  }, []);
+
   return (
     <>
       {/* ================= HERO SECTION ================= */}
       <div className="w-full min-h-[88vh] md:min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-14 text-white relative overflow-hidden bg-[#060B14]">
         <video
+          ref={videoRef}
           className="absolute inset-0 z-0 h-full w-full object-cover"
-          src={heroVideo}
           autoPlay
           muted
+          defaultMuted
           loop
           playsInline
-        />
+          preload="auto"
+          controls={false}
+          disablePictureInPicture
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
 
         {/* Overlay (Fixed double hash typo) */}
         <div className="absolute inset-0 bg-[#060B14]/40 z-0"></div>
