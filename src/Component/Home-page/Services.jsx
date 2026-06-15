@@ -1,6 +1,5 @@
 import React from "react";
 import ScrollReveal from "../Common/ScrollReveal";
-import PixelTransition from "../PixelTransition";
 
 import careerInUsaImg from "../../assets/Cards/career-in-usa.png";
 import jobInUsaImg from "../../assets/Cards/job-in-usa.png";
@@ -48,16 +47,18 @@ const Services = ({
         <div className={`grid grid-cols-1 sm:grid-cols-2 ${columns} gap-6`}>
           {servicesData.map((item, index) => (
             <ScrollReveal key={index} delay={index * 90} className="h-full">
-              <PixelTransition
-                firstContent={
+              <div className="group h-full [perspective:1200px]">
+                <div className="relative aspect-[4/3] h-full w-full rounded-[15px] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
+                  <div className="absolute inset-0 overflow-hidden rounded-[15px] border border-white/10 bg-[#0b1220] shadow-[0_24px_70px_rgba(0,0,0,0.24)] [backface-visibility:hidden]">
                   <img
                     src={cardImages[index % cardImages.length]}
                     alt={item.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
-                }
-                secondContent={
-                  <div className="flex h-full w-full flex-col justify-center bg-[#111] p-6 text-white">
+                    
+                  </div>
+
+                  <div className="absolute inset-0 flex flex-col justify-center rounded-[15px] border border-cyan-300/25 bg-[#111] p-6 text-white shadow-[0_24px_70px_rgba(0,0,0,0.24)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     {item.icon && (
                       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/10">
                         <img
@@ -80,15 +81,8 @@ const Services = ({
                       </p>
                     )}
                   </div>
-                }
-                gridSize={9}
-                pixelColor="#ffffff"
-                once={false}
-                animationStepDuration={0.3}
-                aspectRatio="75%"
-                className="custom-pixel-card lift-card"
-                style={{ width: "100%" }}
-              />
+                </div>
+              </div>
             </ScrollReveal>
           ))}
         </div>

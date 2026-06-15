@@ -14,6 +14,7 @@ const navItems = [
 const insightItems = [
   { label: "Success Stories", to: "/success-stories" },
   { label: "Life at ABCO", to: "/life-at-abco" },
+  { label: "Blog", to: "/blog" },
 ];
 
 const Navbar = () => {
