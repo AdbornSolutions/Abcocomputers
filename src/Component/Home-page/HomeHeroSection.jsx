@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // HERO BG VIDEO
 import heroVideo from "../../assets/Herobg.mp4";
@@ -9,6 +9,13 @@ import CareerinUsa from "./CareerinUsa";
 import ScrollReveal from "../Common/ScrollReveal";
 
 const HomeHeroSection = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowContent(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       {/* ================= HERO SECTION ================= */}
@@ -27,7 +34,13 @@ const HomeHeroSection = () => {
         <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#020617]/70 to-transparent z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center">
+        <div
+          className={`relative z-10 flex flex-col items-center transition-all duration-[1400ms] ease-out ${
+            showContent
+              ? "scale-100 opacity-100"
+              : "scale-75 opacity-0"
+          }`}
+        >
           <ScrollReveal
             as="span"
             variant="scale"
