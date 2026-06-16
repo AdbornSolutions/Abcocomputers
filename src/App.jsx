@@ -10,6 +10,7 @@ import Department from "./Page/Departments/Department";
 import Learning from "./Page/Learning";
 import SuccessStories from "./Page/SuccessStories";
 import LifeAtAbco from "./Page/LifeAtAbco";
+import Career from "./Page/Career";
 import Blog from "./Page/Blog";
 import BlogDetails from "./Page/BlogDetails";
 
@@ -63,6 +64,7 @@ const App = () => {
         <Route path="/learning" element={<Learning />} />
         <Route path="/success-stories" element={<SuccessStories />} />
         <Route path="/life-at-abco" element={<LifeAtAbco />} />
+        <Route path="/career" element={<Career />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
 
