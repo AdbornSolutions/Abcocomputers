@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Page/Home";
 import About from "./Page/About";
 import Contactus from "./Page/Contactus";
+import Documentation from "./Page/Documentation";
 import Services from "./Page/Services/Services";
 import Department from "./Page/Departments/Department";
 import Learning from "./Page/Learning";
@@ -59,6 +60,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contactus" element={<Contactus />} />
+        <Route path="/documentation" element={<Documentation />} />
         <Route path="/services" element={<Services />} />
         <Route path="/department" element={<Department />} />
         <Route path="/learning" element={<Learning />} />

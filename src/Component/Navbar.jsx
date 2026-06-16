@@ -18,6 +18,11 @@ const insightItems = [
   { label: "Blog", to: "/blog" },
 ];
 
+const contactItems = [
+  { label: "Contact us", to: "/contactus" },
+  { label: "Documentation", to: "/documentation" },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -100,13 +105,28 @@ const Navbar = () => {
           </div>
         </nav>
 
-        <div className="hidden lg:block">
-          <Link
-            to="/contactus"
-            className="rounded-full border border-white/20 bg-white/10 px-5 py-3 text-white backdrop-blur-md xl:px-6"
-          >
-            Contact us
-          </Link>
+        <div className="group relative hidden lg:block">
+          <button className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-white backdrop-blur-md transition-colors duration-300 hover:text-[#9ff7f7] xl:px-6">
+            Contact us <ChevronDown size={14} />
+          </button>
+
+          <div className="invisible absolute right-0 top-full mt-2 w-52 rounded-2xl border border-white/15 bg-[#020617]/95 p-2 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+            {contactItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) =>
+                  `block rounded-xl px-4 py-3 text-sm transition ${
+                    isActive
+                      ? "bg-white/10 text-[#2BD7D7]"
+                      : "text-white hover:bg-white/10"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
         </div>
 
         <button
@@ -162,13 +182,27 @@ const Navbar = () => {
               ))}
             </div>
 
-            <Link
-              to="/contactus"
-              onClick={() => setMenuOpen(false)}
-              className="mt-3 rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-black transition hover:bg-white/80"
-            >
-              Contact us
-            </Link>
+            <div className="my-2 border-t border-white/10 pt-3">
+              <p className="mb-2 text-xs uppercase tracking-[0.24em] text-white/40">
+                Contact
+              </p>
+              {contactItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `block rounded-xl px-4 py-3 text-[15px] transition ${
+                      isActive
+                        ? "bg-white/10 text-[#2BD7D7]"
+                        : "text-white hover:bg-white/10"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
           </nav>
         </div>
       )}
